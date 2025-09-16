@@ -69,6 +69,7 @@ export async function loadLocaleMessages(locale: AvailableLocale) {
  * 2. Если не загружена - загружает переводы через loadLocaleMessages
  * 3. Устанавливает новую активную локаль в i18n
  * 4. Сохраняет выбор пользователя в localStorage для персистентности
+ * 5. Обновляет атрибут lang на элементе <html> для корректной семантики
  *
  * Это обеспечивает ленивую загрузку переводов и сохранение настроек между сессиями
  */
@@ -77,7 +78,10 @@ export async function setLocale(locale: AvailableLocale) {
     await loadLocaleMessages(locale);
   }
   i18n.global.locale.value = locale;
+  // Сохраняет выбор пользователя в localStorage
   localStorage.setItem("locale", locale);
+  // Обновляем атрибут lang на элементе <html> для корректной семантики
+  document.documentElement.lang = locale;
 }
 
 /**
