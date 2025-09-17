@@ -1,3 +1,8 @@
 {
-  "hello": "Hello"
+  "hello": "Hello",
+  "switch language": "Switch language",
+  "introduce yourself": "Introduce yourself",
+  "kids": "Kids",
+  "family": "Family",
+  "parents": "Parents"
 }
