@@ -1,0 +1,29 @@
+{
+  "language": "de",
+  "menu": [
+    {
+      "id": "home",
+      "title": "Startseite",
+      "url": "#home",
+      "order": 1
+    },
+    {
+      "id": "services",
+      "title": "Dienstleistungen",
+      "url": "#services",
+      "order": 2
+    },
+    {
+      "id": "about",
+      "title": "Über uns",
+      "url": "#about",
+      "order": 3
+    },
+    {
+      "id": "contact",
+      "title": "Kontakt",
+      "url": "#contact",
+      "order": 4
+    }
+  ]
+}
