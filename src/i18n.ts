@@ -82,7 +82,7 @@ export async function setLocale(locale: AvailableLocale) {
   // Сохраняет выбор пользователя в localStorage
   localStorage.setItem("locale", locale);
   // Обновляем SEO атрибуты
-  updateSEO();
+  await updateSEO();
 }
 
 /**
