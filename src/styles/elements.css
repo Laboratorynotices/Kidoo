@@ -3,23 +3,23 @@
 body {
   /* Задаём цвета фона и текста */
   /* Вначале используем светлую тему */
-  @apply bg-background-primary
-  text-text-primary
+  @apply bg-family-bg-light
+  text-family-text-light
   /* Затем добавляем тёмную тему для поддержки dark mode */
-  dark:bg-background-primary-dark
-  dark:text-text-primary-dark
+  dark:bg-family-bg-dark
+  dark:text-family-text-dark
   /* Детская палитра */
-  kid:bg-background-kid-primary
-  kid:text-text-kid-primary
+  child:bg-child-bg-light
+  child:text-child-text-light
   /* Затем добавляем тёмную тему для поддержки dark mode */
-  kid:dark:bg-background-kid-primary-dark
-  kid:dark:text-text-kid-primary-dark
+  child:dark:bg-child-bg-dark
+  child:dark:text-child-text-dark
   /* Родительская палитра */
-  parent:bg-background-parent-primary
-  parent:text-text-parent-primary
+  parent:bg-parent-bg-light
+  parent:text-parent-text-light
   /* Затем добавляем тёмную тему для поддержки dark mode */
-  parent:dark:bg-background-parent-primary-dark
-  parent:dark:text-text-parent-primary-dark
+  parent:dark:bg-parent-bg-dark
+  parent:dark:text-parent-text-dark
   /* Анимация */
   transition-colors duration-300 ease-in-out;
 }

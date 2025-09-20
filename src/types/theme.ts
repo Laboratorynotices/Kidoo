@@ -9,8 +9,8 @@
  * Режимы отображения приложения
  *
  * @typedef {string} BodyMode
- * @property {'kid'} kid - Детский режим с соответствующим оформлением
+ * @property {'child'} child - Детский режим с соответствующим оформлением
  * @property {'family'} family - Семейный режим (базовое оформление без дополнительных атрибутов)
  * @property {'parent'} parent - Родительский режим с соответствующим оформлением
  */
-export type BodyMode = "kid" | "family" | "parent";
+export type BodyMode = "child" | "family" | "parent";

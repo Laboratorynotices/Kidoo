@@ -28,7 +28,7 @@ onMounted(() => {
   </div>
   <div>
     <p>{{ $t("introduce yourself") }}</p>
-    <button @click="setTheme('kid')">{{ $t("kids") }}</button>
+    <button @click="setTheme('child')">{{ $t("child") }}</button>
     <button @click="setTheme('family')">{{ $t("family") }}</button>
     <button @click="setTheme('parent')">{{ $t("parents") }}</button>
   </div>
