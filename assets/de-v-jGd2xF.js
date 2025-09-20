@@ -1,0 +1,1 @@
+const e="Hallo",l="Kinder",n="Familie",s="Eltern",t={hello:e,"switch language":"Sprache wechseln","introduce yourself":"Stellen Sie sich vor",kids:l,family:n,parents:s};export{t as default,n as family,e as hello,l as kids,s as parents};

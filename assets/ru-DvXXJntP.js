@@ -1,0 +1,1 @@
+const s="Привет",t="Дети",o="Семья",n="Родители",c={hello:s,"switch language":"Переключить язык","introduce yourself":"Представьтесь",kids:t,family:o,parents:n};export{c as default,o as family,s as hello,t as kids,n as parents};
