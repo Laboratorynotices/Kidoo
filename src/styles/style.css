@@ -1,0 +1,9 @@
+@import "tailwindcss";
+
+@import "./variants.css";
+
+@import "./dissable-animation.css";
+
+@import "./theme.css";
+
+@import "./elements.css";

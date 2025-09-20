@@ -1,0 +1,3 @@
+/* Создаём кастомные варианты через data-атрибуты */
+@variant kid ([data-theme="kid"] &);
+@variant parent ([data-theme="parent"] &);

@@ -1,0 +1,283 @@
+/* Определение переменных */
+@theme {
+  /****************************************/
+  /***** Семейная (основная) паллитра *****/
+  /****************************************/
+
+  /* Светлая тема */
+  /* Задний фон */
+  --color-background-primary: #aaaaaa;
+
+  /* Текст */
+  --color-text-primary: #333333;
+
+  /* Тёмная тема */
+  /* Задний фон */
+  --color-background-primary-dark: #333333;
+
+  /* Текст */
+  --color-text-primary-dark: #aaaaaa;
+
+  /* 👨‍👩‍👦 Семья — тёплая и объединяющая */
+  --color-family-bg-light: #fffdf9;
+  --color-family-bg-dark: #1e1e24;
+  --color-family-accent-light: #ff8c42;
+  --color-family-accent-dark: #ffad71;
+  --color-family-secondary-light: #46c5b2;
+  --color-family-secondary-dark: #6fd5c7;
+  --color-family-text-light: #2b2b2b;
+  --color-family-text-dark: #ffffff;
+
+  /* 👨‍👩‍👦 Семья — размеры шрифтов и line-height */
+  --font-family-h1-xs: 28px;
+  --leading-family-h1-xs: 1.35;
+  --font-family-h2-xs: 19px;
+  --leading-family-h2-xs: 1.5;
+  --font-family-body-xs: 16px;
+  --leading-family-body-xs: 1.55;
+  --font-family-cta-xs: 18px;
+  --leading-family-cta-xs: 1.4;
+
+  --font-family-h1-sm: 30px;
+  --leading-family-h1-sm: 1.33;
+  --font-family-h2-sm: 21px;
+  --leading-family-h2-sm: 1.48;
+  --font-family-body-sm: 16px;
+  --leading-family-body-sm: 1.55;
+  --font-family-cta-sm: 18px;
+  --leading-family-cta-sm: 1.4;
+
+  --font-family-h1-md: 36px;
+  --leading-family-h1-md: 1.3;
+  --font-family-h2-md: 24px;
+  --leading-family-h2-md: 1.45;
+  --font-family-body-md: 17px;
+  --leading-family-body-md: 1.55;
+  --font-family-cta-md: 18px;
+  --leading-family-cta-md: 1.4;
+
+  --font-family-h1-lg: 44px;
+  --leading-family-h1-lg: 1.25;
+  --font-family-h2-lg: 28px;
+  --leading-family-h2-lg: 1.4;
+  --font-family-body-lg: 18px;
+  --leading-family-body-lg: 1.55;
+  --font-family-cta-lg: 19px;
+  --leading-family-cta-lg: 1.4;
+
+  --font-family-h1-xl: 54px;
+  --leading-family-h1-xl: 1.2;
+  --font-family-h2-xl: 32px;
+  --leading-family-h2-xl: 1.35;
+  --font-family-body-xl: 19px;
+  --leading-family-body-xl: 1.5;
+  --font-family-cta-xl: 20px;
+  --leading-family-cta-xl: 1.4;
+
+  --font-family-h1-2xl: 64px;
+  --leading-family-h1-2xl: 1.15;
+  --font-family-h2-2xl: 36px;
+  --leading-family-h2-2xl: 1.3;
+  --font-family-body-2xl: 20px;
+  --leading-family-body-2xl: 1.45;
+  --font-family-cta-2xl: 22px;
+  --leading-family-cta-2xl: 1.4;
+
+  /****************************************/
+  /*********** Детская паллитра ***********/
+  /****************************************/
+
+  /* Светлая тема */
+  /* Задний фон */
+  --color-background-kid-primary: #337777;
+
+  /* Текст */
+  --color-text-kid-primary: #882288;
+
+  /* Тёмная тема */
+  /* Задний фон */
+  --color-background-kid-primary-dark: #882288;
+
+  /* Текст */
+  --color-text-kid-primary-dark: #337777;
+
+  /* 👧 Дети — яркая и живая */
+  --color-child-bg-light: #fff9e6;
+  --color-child-bg-dark: #1c1c28;
+  --color-child-accent-light: #ffd93d;
+  --color-child-accent-dark: #ffeb7f;
+  --color-child-secondary-light: #4dbeee;
+  --color-child-secondary-dark: #6fd0f5;
+  --color-child-highlight-light: #ff6f91;
+  --color-child-highlight-dark: #ff92a8;
+  --color-child-text-light: #2e2e2e;
+  --color-child-text-dark: #ffffff;
+
+  /* 👧 Дети — размеры шрифтов и line-height */
+  --font-child-h1-xs: 26px;
+  --leading-child-h1-xs: 1.3;
+  --font-child-h2-xs: 18px;
+  --leading-child-h2-xs: 1.4;
+  --font-child-body-xs: 15px;
+  --leading-child-body-xs: 1.5;
+  --font-child-cta-xs: 16px;
+  --leading-child-cta-xs: 1.4;
+
+  --font-child-h1-sm: 28px;
+  --leading-child-h1-sm: 1.3;
+  --font-child-h2-sm: 20px;
+  --leading-child-h2-sm: 1.4;
+  --font-child-body-sm: 16px;
+  --leading-child-body-sm: 1.5;
+  --font-child-cta-sm: 16px;
+  --leading-child-cta-sm: 1.4;
+
+  --font-child-h1-md: 32px;
+  --leading-child-h1-md: 1.3;
+  --font-child-h2-md: 22px;
+  --leading-child-h2-md: 1.4;
+  --font-child-body-md: 16px;
+  --leading-child-body-md: 1.5;
+  --font-child-cta-md: 17px;
+  --leading-child-cta-md: 1.4;
+
+  --font-child-h1-lg: 40px;
+  --leading-child-h1-lg: 1.25;
+  --font-child-h2-lg: 26px;
+  --leading-child-h2-lg: 1.3;
+  --font-child-body-lg: 17px;
+  --leading-child-body-lg: 1.45;
+  --font-child-cta-lg: 18px;
+  --leading-child-cta-lg: 1.4;
+
+  --font-child-h1-xl: 48px;
+  --leading-child-h1-xl: 1.2;
+  --font-child-h2-xl: 30px;
+  --leading-child-h2-xl: 1.25;
+  --font-child-body-xl: 18px;
+  --leading-child-body-xl: 1.45;
+  --font-child-cta-xl: 18px;
+  --leading-child-cta-xl: 1.4;
+
+  --font-child-h1-2xl: 56px;
+  --leading-child-h1-2xl: 1.15;
+  --font-child-h2-2xl: 34px;
+  --leading-child-h2-2xl: 1.2;
+  --font-child-body-2xl: 19px;
+  --leading-child-body-2xl: 1.4;
+  --font-child-cta-2xl: 20px;
+  --leading-child-cta-2xl: 1.4;
+
+  /*****************************************/
+  /*********** Взрослая паллитра ***********/
+  /*****************************************/
+
+  /* Светлая тема */
+  /* Задний фон */
+  --color-background-parent-primary: #ffffff; /* чистый белый */
+
+  /* Текст */
+  --color-text-parent-primary: #000000; /* чёрный */
+
+  /* Тёмная тема */
+  /* Задний фон */
+  --color-background-parent-primary-dark: #000000; /* чёрный */
+
+  /* Текст */
+  --color-text-parent-primary-dark: #ffffff; /* белый */
+
+  /* 👨 Родители — спокойная и надёжная */
+  --color-parent-bg-light: #f5f7fa;
+  --color-parent-bg-dark: #121212;
+  --color-parent-accent-light: #2d5b8c;
+  --color-parent-accent-dark: #6c8ebf;
+  --color-parent-secondary-light: #4caf50;
+  --color-parent-secondary-dark: #70c47b;
+  --color-parent-text-light: #1a1a1a;
+  --color-parent-text-dark: #ffffff;
+
+  /* 👨 Родители — размеры шрифтов и line-height */
+  --font-parent-h1-xs: 24px;
+  --leading-parent-h1-xs: 1.4;
+  --font-parent-h2-xs: 20px;
+  --leading-parent-h2-xs: 1.5;
+  --font-parent-body-xs: 16px;
+  --leading-parent-body-xs: 1.6;
+  --font-parent-cta-xs: 17px;
+  --leading-parent-cta-xs: 1.5;
+
+  --font-parent-h1-sm: 28px;
+  --leading-parent-h1-sm: 1.4;
+  --font-parent-h2-sm: 22px;
+  --leading-parent-h2-sm: 1.5;
+  --font-parent-body-sm: 16px;
+  --leading-parent-body-sm: 1.6;
+  --font-parent-cta-sm: 17px;
+  --leading-parent-cta-sm: 1.5;
+
+  --font-parent-h1-md: 34px;
+  --leading-parent-h1-md: 1.35;
+  --font-parent-h2-md: 24px;
+  --leading-parent-h2-md: 1.45;
+  --font-parent-body-md: 17px;
+  --leading-parent-body-md: 1.6;
+  --font-parent-cta-md: 18px;
+  --leading-parent-cta-md: 1.5;
+
+  --font-parent-h1-lg: 42px;
+  --leading-parent-h1-lg: 1.3;
+  --font-parent-h2-lg: 28px;
+  --leading-parent-h2-lg: 1.4;
+  --font-parent-body-lg: 18px;
+  --leading-parent-body-lg: 1.55;
+  --font-parent-cta-lg: 18px;
+  --leading-parent-cta-lg: 1.5;
+
+  --font-parent-h1-xl: 52px;
+  --leading-parent-h1-xl: 1.25;
+  --font-parent-h2-xl: 32px;
+  --leading-parent-h2-xl: 1.35;
+  --font-parent-body-xl: 18px;
+  --leading-parent-body-xl: 1.55;
+  --font-parent-cta-xl: 19px;
+  --leading-parent-cta-xl: 1.5;
+
+  --font-parent-h1-2xl: 60px;
+  --leading-parent-h1-2xl: 1.2;
+  --font-parent-h2-2xl: 36px;
+  --leading-parent-h2-2xl: 1.3;
+  --font-parent-body-2xl: 20px;
+  --leading-parent-body-2xl: 1.5;
+  --font-parent-cta-2xl: 20px;
+  --leading-parent-cta-2xl: 1.5;
+
+  /* 📦 Сетка */
+  --container-xs: 100%;
+  --container-sm: 480px;
+  --container-md: 768px;
+  --container-lg: 1024px;
+  --container-xl: 1440px;
+  --container-2xl: 1440px;
+
+  /* Прочие переменные */
+  --radius-default: 12px; /* дружелюбные скругления */
+  --shadow-soft: 0 6px 18px rgba(0, 0, 0, 0.08);
+  --transition-default: 0.3s ease-in-out;
+  --spacing-xs: 4px;
+  --spacing-sm: 8px;
+  --spacing-md: 16px;
+  --spacing-lg: 24px;
+  --spacing-xl: 32px;
+  --spacing-2xl: 48px;
+
+  /* Дополнительные параметры для мобильного first */
+  --container-padding-xs: 12px;
+  --container-padding-sm: 16px;
+  --container-padding-md: 20px;
+  --container-padding-lg: 24px;
+  --container-padding-xl: 32px;
+  --container-padding-2xl: 48px;
+
+  --max-content-width: 1440px;
+  --z-index-floating-button: 50;
+}
