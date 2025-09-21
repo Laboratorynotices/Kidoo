@@ -1,10 +1,9 @@
 /* Определение переменных */
 @theme {
   /****************************************/
-  /***** Семейная (основная) паллитра *****/
+  /*** 👨‍👩‍👦 Семейная (основная) паллитра ***/
+  /********* тёплая и объединяющая ********/
   /****************************************/
-
-  /* 👨‍👩‍👦 Семья — тёплая и объединяющая */
   --color-family-bg-light: #fffdf9;
   --color-family-bg-dark: #1e1e24;
   --color-family-accent-light: #ff8c42;
@@ -15,14 +14,14 @@
   --color-family-text-dark: #ffffff;
 
   /* 👨‍👩‍👦 Семья — размеры шрифтов и line-height */
-  --font-family-h1-xs: 28px;
-  --leading-family-h1-xs: 1.35;
-  --font-family-h2-xs: 19px;
-  --leading-family-h2-xs: 1.5;
-  --font-family-body-xs: 16px;
-  --leading-family-body-xs: 1.55;
-  --font-family-cta-xs: 18px;
-  --leading-family-cta-xs: 1.4;
+  --font-family-h1: 28px;
+  --leading-family-h1: 1.35;
+  --font-family-h2: 19px;
+  --leading-family-h2: 1.5;
+  --font-family-body: 16px;
+  --leading-family-body: 1.55;
+  --font-family-cta: 18px;
+  --leading-family-cta: 1.4;
 
   --font-family-h1-sm: 30px;
   --leading-family-h1-sm: 1.33;
@@ -85,14 +84,14 @@
   --color-child-text-dark: #ffffff;
 
   /* 👧 Дети — размеры шрифтов и line-height */
-  --font-child-h1-xs: 26px;
-  --leading-child-h1-xs: 1.3;
-  --font-child-h2-xs: 18px;
-  --leading-child-h2-xs: 1.4;
-  --font-child-body-xs: 15px;
-  --leading-child-body-xs: 1.5;
-  --font-child-cta-xs: 16px;
-  --leading-child-cta-xs: 1.4;
+  --font-child-h1: 26px;
+  --leading-child-h1: 1.3;
+  --font-child-h2: 18px;
+  --leading-child-h2: 1.4;
+  --font-child-body: 15px;
+  --leading-child-body: 1.5;
+  --font-child-cta: 16px;
+  --leading-child-cta: 1.4;
 
   --font-child-h1-sm: 28px;
   --leading-child-h1-sm: 1.3;
@@ -168,14 +167,14 @@
   --color-parent-text-dark: #ffffff;
 
   /* 👨 Родители — размеры шрифтов и line-height */
-  --font-parent-h1-xs: 24px;
-  --leading-parent-h1-xs: 1.4;
-  --font-parent-h2-xs: 20px;
-  --leading-parent-h2-xs: 1.5;
-  --font-parent-body-xs: 16px;
-  --leading-parent-body-xs: 1.6;
-  --font-parent-cta-xs: 17px;
-  --leading-parent-cta-xs: 1.5;
+  --font-parent-h1: 24px;
+  --leading-parent-h1: 1.4;
+  --font-parent-h2: 20px;
+  --leading-parent-h2: 1.5;
+  --font-parent-body: 16px;
+  --leading-parent-body: 1.6;
+  --font-parent-cta: 17px;
+  --leading-parent-cta: 1.5;
 
   --font-parent-h1-sm: 28px;
   --leading-parent-h1-sm: 1.4;
@@ -223,7 +222,7 @@
   --leading-parent-cta-2xl: 1.5;
 
   /* 📦 Сетка */
-  --container-xs: 100%;
+  --container: 100%;
   --container-sm: 480px;
   --container-md: 768px;
   --container-lg: 1024px;
@@ -232,9 +231,10 @@
 
   /* Прочие переменные */
   --radius-default: 12px; /* дружелюбные скругления */
+  --shadow-default: 0 10px 20px rgba(0, 0, 0, 0.5);
   --shadow-soft: 0 6px 18px rgba(0, 0, 0, 0.08);
   --transition-default: 0.3s ease-in-out;
-  --spacing-xs: 4px;
+  --spacing: 4px;
   --spacing-sm: 8px;
   --spacing-md: 16px;
   --spacing-lg: 24px;
@@ -242,7 +242,7 @@
   --spacing-2xl: 48px;
 
   /* Дополнительные параметры для мобильного first */
-  --container-padding-xs: 12px;
+  --container-padding: 12px;
   --container-padding-sm: 16px;
   --container-padding-md: 20px;
   --container-padding-lg: 24px;
