@@ -4,5 +4,9 @@
   "introduce yourself": "Представьтесь",
   "child": "Дети",
   "family": "Семья",
-  "parents": "Родители"
+  "parents": "Родители",
+  "aria.nav.toTop": "Наверх страницы",
+  "aria.nav.openMenu": "Открыть меню навигации",
+  "aria.nav.closeMenu": "Закрыть меню навигации",
+  "aria.nav.main": "Главная навигация"
 }

@@ -1,0 +1,122 @@
+.header {
+  @apply flex items-center justify-center
+  h-20 w-full sticky top-0
+  shadow-[var(--shadow-default)]
+  z-[var(--z-index-floating-button)]
+  bg-family-bg-light/90 dark:bg-family-bg-dark/90
+  child:bg-child-bg-light/90 dark:child:bg-child-bg-dark/90
+  parent:bg-parent-bg-light/90 dark:parent:bg-parent-bg-dark/90
+  lg:bg-transparent
+  lg:backdrop-blur-md
+  lg:child:bg-transparent dark:lg:child:bg-transparent
+  lg:parent:bg-transparent dark:lg:parent:bg-transparent;
+
+  & .container {
+    @apply flex items-center justify-between
+    w-full
+    relative
+    overflow-x-clip;
+
+    & .navbar-logo {
+      @apply text-[1.7rem] md:text-[2rem]
+      font-semibold
+      text-family-text-light dark:text-family-text-dark
+      child:text-child-text-light dark:child:text-child-text-dark
+      parent:text-parent-text-light dark:parent:text-parent-text-dark
+      no-underline cursor-pointer;
+    }
+
+    /* Mobile hamburger menu - visible by default */
+    & .navbar-toggle {
+      @apply block lg:hidden
+      cursor-pointer
+      p-2.5 border-none
+      z-[var(--z-index-floating-button)]
+      bg-transparent;
+
+      & .bar {
+        @apply block 
+          w-[25px] h-[3px]
+          bg-family-text-light dark:bg-family-text-dark
+          child:bg-child-text-light dark:child:bg-child-text-dark
+          parent:bg-parent-text-light dark:parent:bg-parent-text-dark
+          transition-all duration-[0.3s] ease-[ease-in-out]
+          mx-auto my-[5px];
+      }
+
+      /* Hamburger animation */
+      &.active .bar:nth-child(2) {
+        @apply opacity-0;
+      }
+
+      &.active .bar:nth-child(1) {
+        @apply translate-y-2 -rotate-45;
+      }
+
+      &.active .bar:nth-child(3) {
+        @apply -translate-y-2 rotate-45;
+      }
+    }
+
+    /* Mobile menu - hidden by default, show as hamburger */
+    & .navbar-menu {
+      @apply /* hidden lg: */ block
+        absolute
+        backdrop-blur-md
+        shadow-[var(--shadow-default)]
+        h-screen
+        /* Почему-то менюшка задирается наверх */
+        top-2 right-0
+        translate-x-[150%]
+        lg:translate-x-0
+        lg:static
+        lg:shadow-none
+        lg:h-auto
+        lg:backdrop-blur-none
+        lg:bg-transparent
+        transition-transform duration-300 ease-in-out;
+
+      &.active {
+        @apply translate-x-0;
+      }
+
+      & ul {
+        @apply flex flex-col
+          items-start gap-[1.7rem]
+          w-[250px] px-6 py-20
+          list-none          
+          lg:flex-row
+          lg:items-center
+          lg:h-auto
+          lg:w-auto
+          lg:gap-6
+          lg:p-0;
+
+        & li a {
+          @apply no-underline text-[1.2rem] font-medium
+            text-family-text-light dark:text-family-text-dark
+            child:text-child-text-light dark:child:text-child-text-dark
+            parent:text-parent-text-light dark:parent:text-parent-text-dark
+            transition-all duration-[0.7s] ease-[ease] 
+            whitespace-nowrap px-[15px] py-[3px] 
+            rounded-[20px] border-2 border-solid border-transparent
+            md:text-[1.3rem] md:px-5 md:py-[3px];
+
+          &:hover,
+          &.active {
+            @apply border-2
+                text-family-text-light dark:text-family-text-dark
+                child:text-child-text-light dark:child:text-child-text-dark
+                parent:text-parent-text-light dark:parent:text-parent-text-dark
+                border-family-accent-light dark:border-family-accent-dark
+                child:border-child-accent-light dark:child:border-child-accent-dark
+                parent:border-parent-accent-light dark:parent:border-parent-accent-dark
+                bg-family-secondary-light dark:bg-family-secondary-dark
+                child:bg-child-secondary-light dark:child:bg-child-secondary-dark
+                parent:bg-parent-secondary-light dark:parent:bg-parent-secondary-dark;
+          }
+        }
+      }
+    }
+  }
+}

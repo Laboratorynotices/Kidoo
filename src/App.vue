@@ -3,7 +3,7 @@ import { onMounted } from "vue";
 import { switchLocale } from "./i18n";
 import { useTheme } from "@/composables/useTheme";
 
-import HeaderApp from "@/components/HeaderApp.vue";
+import HeaderApp from "@/components/header/HeaderApp.vue";
 
 // Получаем методы для работы с темами из композабла
 const { setTheme, initTheme } = useTheme();
@@ -19,9 +19,7 @@ onMounted(() => {
 </script>
 
 <template>
-  <div>
-    <HeaderApp />
-  </div>
+  <HeaderApp />
   <div>
     <p>{{ $t("hello") }}</p>
     <button @click="switchLocale">{{ $t("switch language") }}</button>

@@ -4,5 +4,9 @@
   "introduce yourself": "Introduce yourself",
   "child": "Сhild",
   "family": "Family",
-  "parents": "Parents"
+  "parents": "Parents",
+  "aria.nav.toTop": "To top of page",
+  "aria.nav.openMenu": "Open navigation menu",
+  "aria.nav.closeMenu": "Close navigation menu",
+  "aria.nav.main": "Main navigation"
 }

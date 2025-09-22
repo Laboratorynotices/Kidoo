@@ -4,5 +4,9 @@
   "introduce yourself": "Stellen Sie sich vor",
   "child": "Kinder",
   "family": "Familie",
-  "parents": "Eltern"
+  "parents": "Eltern",
+  "aria.nav.toTop": "Zum Seitenanfang",
+  "aria.nav.openMenu": "Navigationsmenü öffnen",
+  "aria.nav.closeMenu": "Navigationsmenü schließen",
+  "aria.nav.main": "Hauptnavigation"
 }
