@@ -1,6 +1,9 @@
 {
-  "hello": "Hallo",
   "switch language": "Sprache wechseln",
+  "english": "Englisch",
+  "russian": "Russisch",
+  "german": "Deutsch",
+  "switch to ru": "Auf Russisch umschalten",
   "introduce yourself": "Stellen Sie sich vor",
   "child": "Kinder",
   "family": "Familie",

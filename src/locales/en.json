@@ -1,6 +1,9 @@
 {
-  "hello": "Hello",
   "switch language": "Switch language",
+  "english": "English",
+  "russian": "Russian",
+  "german": "German",
+  "switch to de": "Switch to German",
   "introduce yourself": "Introduce yourself",
   "child": "Сhild",
   "family": "Family",

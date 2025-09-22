@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { ref } from "vue";
+import HeaderSwitchers from "./HeaderSwitchers.vue";
 import HeaderToggleMenu from "./HeaderToggleMenu.vue";
 import HeaderNav from "./HeaderNav.vue";
 
@@ -20,6 +21,8 @@ const closeMenu = () => {
         :aria-label="$t('aria.nav.toTop')"
         >Kidoo</a
       >
+
+      <HeaderSwitchers />
 
       <HeaderToggleMenu v-model="isMenuActive" />
 

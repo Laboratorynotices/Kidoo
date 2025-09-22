@@ -15,7 +15,7 @@
     @apply flex items-center justify-between
     w-full
     relative
-    overflow-x-clip;
+    overflow-x-clip lg:overflow-x-visible;
 
     & .navbar-logo {
       @apply text-[1.7rem] md:text-[2rem]
@@ -24,6 +24,18 @@
       child:text-child-text-light dark:child:text-child-text-dark
       parent:text-parent-text-light dark:parent:text-parent-text-dark
       no-underline cursor-pointer;
+    }
+
+    & .navbar-switchers {
+      & .lang-switcher {
+        @apply flex items-center justify-center
+          w-8
+          m-0 p-0 border-none
+          cursor-pointer
+          transition-all duration-[0.3s] ease-[ease-in-out]
+          hover:shadow-[var(--shadow-soft)]
+          hover:scale-110;
+      }
     }
 
     /* Mobile hamburger menu - visible by default */
@@ -92,19 +104,25 @@
           lg:gap-6
           lg:p-0;
 
-        & li a {
-          @apply no-underline text-[1.2rem] font-medium
+        & li {
+          @apply transition-transform duration-[0.7s] ease-[ease]
+          hover:scale-110;
+
+          & a {
+            @apply no-underline text-[1.2rem] font-medium
             text-family-text-light dark:text-family-text-dark
             child:text-child-text-light dark:child:text-child-text-dark
             parent:text-parent-text-light dark:parent:text-parent-text-dark
-            transition-all duration-[0.7s] ease-[ease] 
+            transition-colors duration-[0.7s] ease-[ease]
             whitespace-nowrap px-[15px] py-[3px] 
             rounded-[20px] border-2 border-solid border-transparent
-            md:text-[1.3rem] md:px-5 md:py-[3px];
+            md:text-[1.3rem] md:px-5 md:py-[3px]
+            hover:shadow-[var(--shadow-soft)]
+            hover:scale-110;
 
-          &:hover,
-          &.active {
-            @apply border-2
+            &:hover,
+            &.active {
+              @apply border-2
                 text-family-text-light dark:text-family-text-dark
                 child:text-child-text-light dark:child:text-child-text-dark
                 parent:text-parent-text-light dark:parent:text-parent-text-dark
@@ -114,6 +132,7 @@
                 bg-family-secondary-light dark:bg-family-secondary-dark
                 child:bg-child-secondary-light dark:child:bg-child-secondary-dark
                 parent:bg-parent-secondary-light dark:parent:bg-parent-secondary-dark;
+            }
           }
         }
       }

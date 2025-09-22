@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import { onMounted } from "vue";
-import { switchLocale } from "./i18n";
 import { useTheme } from "@/composables/useTheme";
 
 import HeaderApp from "@/components/header/HeaderApp.vue";
@@ -20,10 +19,6 @@ onMounted(() => {
 
 <template>
   <HeaderApp />
-  <div>
-    <p>{{ $t("hello") }}</p>
-    <button @click="switchLocale">{{ $t("switch language") }}</button>
-  </div>
   <div>
     <p>{{ $t("introduce yourself") }}</p>
     <button @click="setTheme('child')">{{ $t("child") }}</button>

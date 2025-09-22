@@ -1,6 +1,9 @@
 {
-  "hello": "Привет",
   "switch language": "Переключить язык",
+  "english": "Английский",
+  "russian": "Русский",
+  "german": "Немецкий",
+  "switch to en": "Переключиться на английский",
   "introduce yourself": "Представьтесь",
   "child": "Дети",
   "family": "Семья",
