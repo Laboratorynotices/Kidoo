@@ -1,9 +1,11 @@
 /**
  * Универсальная утилита для API-запросов
  */
+// глобальная константа из vite.config.ts
+declare const __APP_BASE__: string;
 
 // Константы API
-const API_BASE_URL = "/api/v1";
+const API_BASE_URL = `${__APP_BASE__}api/v1`;
 
 export interface ApiError extends Error {
   status: number;
