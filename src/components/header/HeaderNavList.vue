@@ -47,6 +47,9 @@ const loadMenu = async () => {
 
 // Вычисляемые свойства
 const currentLocale = computed(() => locale.value as AvailableLocale);
+const menuList = computed(() =>
+  menuData.value?.menu.sort((a, b) => a.order - b.order),
+);
 
 // Отслеживаем изменение локали
 watch(
@@ -65,7 +68,7 @@ onMounted(() => {
 
 <template>
   <ul class="header__menu-list">
-    <li v-for="item in menuData?.menu" :key="item.id" class="header__menu-item">
+    <li v-for="item in menuList" :key="item.id" class="header__menu-item">
       <a
         :href="item.url"
         class="header__menu-link"
