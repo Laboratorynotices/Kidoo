@@ -55,10 +55,12 @@ const i18n = createI18n({
  * Используется динамический импорт для code splitting -
  * переводы загружаются только когда нужны, а не все сразу
  */
-export async function loadLocaleMessages(locale: AvailableLocale) {
+export const loadLocaleMessages = async (
+  locale: AvailableLocale,
+): Promise<void> => {
   const messages = await import(`./locales/${locale}.json`);
   i18n.global.setLocaleMessage(locale, messages.default);
-}
+};
 
 /**
  * Асинхронная функция для установки новой локали
@@ -74,7 +76,7 @@ export async function loadLocaleMessages(locale: AvailableLocale) {
  *
  * Это обеспечивает ленивую загрузку переводов и сохранение настроек между сессиями
  */
-export async function setLocale(locale: AvailableLocale) {
+export const setLocale = async (locale: AvailableLocale): Promise<void> => {
   if (!i18n.global.availableLocales.includes(locale)) {
     await loadLocaleMessages(locale);
   }
@@ -83,7 +85,7 @@ export async function setLocale(locale: AvailableLocale) {
   localStorage.setItem("locale", locale);
   // Обновляем SEO атрибуты
   await updateSEO();
-}
+};
 
 /**
  * Функция для циклического переключения между поддерживаемыми локалями
@@ -98,7 +100,7 @@ export async function setLocale(locale: AvailableLocale) {
  *
  * Полезно для кнопки переключения языков в UI
  */
-export async function switchLocale() {
+export const switchLocale = async (): Promise<void> => {
   const newLocaleIndex =
     // Получаем индекс текущей локали в массиве SUPPORT_LOCALES
     (SUPPORT_LOCALES.indexOf(i18n.global.locale.value as AvailableLocale) +
@@ -111,7 +113,7 @@ export async function switchLocale() {
   const newLocale = SUPPORT_LOCALES[newLocaleIndex] as AvailableLocale;
   // Устанавливаем новую локаль
   await setLocale(newLocale);
-}
+};
 
 /**
  * Экспорт экземпляра i18n как модуль по умолчанию
