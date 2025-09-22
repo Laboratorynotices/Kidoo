@@ -88,20 +88,17 @@ export const setLocale = async (locale: AvailableLocale): Promise<void> => {
 };
 
 /**
- * Функция для циклического переключения между поддерживаемыми локалями
+ * Возвращает следующую локаль из списка SUPPORT_LOCALES
+ * с учётом циклического перехода (после последней идёт первая).
  *
  * Алгоритм:
- * 1. Находит индекс текущей локали в массиве SUPPORT_LOCALES
- * 2. Вычисляет следующий индекс с помощью модульного деления (циклический переход)
- * 3. Получает следующую локаль по вычисленному индексу
- * 4. Устанавливает новую локаль через setLocale
- *
- * Пример: de -> ru -> en -> de -> ru -> ...
- *
- * Полезно для кнопки переключения языков в UI
+ * 1. Находим индекс текущей локали
+ * 2. Прибавляем 1 и берём остаток от деления на длину массива
+ * 3. Возвращаем локаль по новому индексу
  */
-export const switchLocale = async (): Promise<void> => {
-  const newLocaleIndex =
+export const getNextLocale = (): AvailableLocale => {
+  // Вычисляем индекс следующей локали в массиве SUPPORT_LOCALES
+  const newLocaleIndex: number =
     // Получаем индекс текущей локали в массиве SUPPORT_LOCALES
     (SUPPORT_LOCALES.indexOf(i18n.global.locale.value as AvailableLocale) +
       // Увеличиваем индекс на 1 для перехода к следующей локали
@@ -110,9 +107,19 @@ export const switchLocale = async (): Promise<void> => {
     SUPPORT_LOCALES.length;
 
   // Получаем новую локаль по вычисленному индексу
-  const newLocale = SUPPORT_LOCALES[newLocaleIndex] as AvailableLocale;
+  return SUPPORT_LOCALES[newLocaleIndex] as AvailableLocale;
+};
+
+/**
+ * Переключает активную локаль на следующую из списка SUPPORT_LOCALES.
+ *
+ * Используется для кнопки/триггера смены языка.
+ *
+ * Пример последовательности: de → ru → en → de → ...
+ */
+export const switchLocale = async (): Promise<void> => {
   // Устанавливаем новую локаль
-  await setLocale(newLocale);
+  await setLocale(getNextLocale());
 };
 
 /**
