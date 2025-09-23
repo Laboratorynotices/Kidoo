@@ -1,6 +1,7 @@
 .header {
   @apply flex items-center justify-center
-  h-20 w-full sticky top-0
+    relative
+  h-20 w-full top-0
   shadow-[var(--shadow-default)]
   z-[var(--z-index-floating-button)]
   bg-family-bg-light/90 dark:bg-family-bg-dark/90
@@ -14,7 +15,6 @@
   & .container {
     @apply flex items-center justify-between
     w-full
-    relative
     overflow-x-clip lg:overflow-x-visible;
 
     & .navbar-logo {
@@ -113,7 +113,7 @@
         shadow-[var(--shadow-default)]
         h-screen
         /* Почему-то менюшка задирается наверх */
-        top-2 right-0
+        top-0 right-0
         translate-x-[150%]
         lg:translate-x-0
         lg:static
