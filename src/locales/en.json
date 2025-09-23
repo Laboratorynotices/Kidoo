@@ -11,5 +11,10 @@
   "aria.nav.toTop": "To top of page",
   "aria.nav.openMenu": "Open navigation menu",
   "aria.nav.closeMenu": "Close navigation menu",
-  "aria.nav.main": "Main navigation"
+  "aria.nav.main": "Main navigation",
+  "header.switcher.groupLabel": "View mode switcher",
+  "header.switcher.childMode": "Child mode",
+  "header.switcher.parentMode": "Parent mode",
+  "header.switcher.childIconAlt": "Child icon",
+  "header.switcher.parentIconAlt": "Parent icon"
 }

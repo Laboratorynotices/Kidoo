@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import SwitchLocale from "./SwitchLocale.vue";
+import SwitchPalette from "./SwitchPalette.vue";
 </script>
 
 <template>
@@ -7,6 +8,6 @@ import SwitchLocale from "./SwitchLocale.vue";
     <SwitchLocale />
 
     <!-- Переключатель палитры (ребёнок, семья, родитель) -->
-    <!-- SwitchPalette -->
+    <SwitchPalette />
   </div>
 </template>

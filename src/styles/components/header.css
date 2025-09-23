@@ -27,6 +27,8 @@
     }
 
     & .navbar-switchers {
+      @apply flex items-center gap-8;
+
       & .lang-switcher {
         @apply flex items-center justify-center
           w-8
@@ -35,6 +37,39 @@
           transition-all duration-[0.3s] ease-[ease-in-out]
           hover:shadow-[var(--shadow-soft)]
           hover:scale-110;
+      }
+
+      & .palette_switcher {
+        @apply flex items-center;
+
+        & .palette_switcher__icon {
+          @apply w-8 h-8
+            /* Заменяем цвета для неактивной иконки */
+            opacity-33
+            transition-all duration-[0.7s] ease-[ease]
+            hover:scale-110
+            hover:shadow-[var(--shadow-soft)]
+            child:rounded-full rounded-xl parent:rounded-lg
+            border-2 border-solid border-transparent;
+
+          &.active {
+            /* Возвращаем цвет */
+            @apply opacity-100;
+          }
+
+          &:hover {
+            @apply border-2
+                text-family-text-light dark:text-family-text-dark
+                child:text-child-text-light dark:child:text-child-text-dark
+                parent:text-parent-text-light dark:parent:text-parent-text-dark
+                border-family-accent-light dark:border-family-accent-dark
+                child:border-child-accent-light dark:child:border-child-accent-dark
+                parent:border-parent-accent-light dark:parent:border-parent-accent-dark
+                bg-family-secondary-light dark:bg-family-secondary-dark
+                child:bg-child-secondary-light dark:child:bg-child-secondary-dark
+                parent:bg-parent-secondary-light dark:parent:bg-parent-secondary-dark;
+          }
+        }
       }
     }
 
@@ -115,15 +150,14 @@
             parent:text-parent-text-light dark:parent:text-parent-text-dark
             transition-colors duration-[0.7s] ease-[ease]
             whitespace-nowrap px-[15px] py-[3px] 
-            rounded-[20px] border-2 border-solid border-transparent
+            child:rounded-full rounded-xl parent:rounded-lg
+            border-2 border-solid border-transparent
             md:text-[1.3rem] md:px-5 md:py-[3px]
-            hover:shadow-[var(--shadow-soft)]
-            hover:scale-110;
+            hover:shadow-[var(--shadow-soft)];
 
             &:hover,
             &.active {
-              @apply border-2
-                text-family-text-light dark:text-family-text-dark
+              @apply text-family-text-light dark:text-family-text-dark
                 child:text-child-text-light dark:child:text-child-text-dark
                 parent:text-parent-text-light dark:parent:text-parent-text-dark
                 border-family-accent-light dark:border-family-accent-dark

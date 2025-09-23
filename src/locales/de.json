@@ -11,5 +11,10 @@
   "aria.nav.toTop": "Zum Seitenanfang",
   "aria.nav.openMenu": "Navigationsmenü öffnen",
   "aria.nav.closeMenu": "Navigationsmenü schließen",
-  "aria.nav.main": "Hauptnavigation"
+  "aria.nav.main": "Hauptnavigation",
+  "header.switcher.groupLabel": "Ansichtsmodus wechseln",
+  "header.switcher.childMode": "Kindmodus",
+  "header.switcher.parentMode": "Elternmodus",
+  "header.switcher.childIconAlt": "Kind-Symbol",
+  "header.switcher.parentIconAlt": "Eltern-Symbol"
 }

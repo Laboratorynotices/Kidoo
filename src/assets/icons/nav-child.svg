@@ -1,0 +1,18 @@
+<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+  <!-- Иконка ребёнка -->
+  <g id="child-icon" class="nav-child-icon" fill="currentColor">
+    <!-- Голова -->
+    <circle cx="50" cy="35" r="12"/>
+
+    <!-- Тело -->
+    <rect x="42" y="47" width="16" height="25" rx="8"/>
+
+    <!-- Руки (короткие, повернутые к телу) -->
+    <rect x="32" y="52" width="6" height="12" rx="3" transform="rotate(15 35 58)"/>
+    <rect x="62" y="52" width="6" height="12" rx="3" transform="rotate(-15 65 58)"/>
+
+    <!-- Ноги (короткие) -->
+    <rect x="44" y="72" width="5" height="18" rx="2.5"/>
+    <rect x="51" y="72" width="5" height="18" rx="2.5"/>
+  </g>
+</svg>

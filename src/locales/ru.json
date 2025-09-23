@@ -11,5 +11,10 @@
   "aria.nav.toTop": "Наверх страницы",
   "aria.nav.openMenu": "Открыть меню навигации",
   "aria.nav.closeMenu": "Закрыть меню навигации",
-  "aria.nav.main": "Главная навигация"
+  "aria.nav.main": "Главная навигация",
+  "header.switcher.groupLabel": "Переключение режимов просмотра",
+  "header.switcher.childMode": "Режим ребенка",
+  "header.switcher.parentMode": "Режим родителя",
+  "header.switcher.childIconAlt": "Иконка ребенка",
+  "header.switcher.parentIconAlt": "Иконка родителя"
 }
