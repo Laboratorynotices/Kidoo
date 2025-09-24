@@ -1,18 +1,45 @@
 # useTheme
 
-Композабл для централизованного управления цветовыми темами в Vue.js-приложении с автоматическим сохранением пользовательских предпочтений.
+Композабл для централизованного управления цветовыми темами в Vue.js-приложении.
+Поддерживает переключение режимов оформления (**детский, семейный, родительский**) с сохранением выбора пользователя и удобным управлением через реактивные флаги.
+
+---
 
 ## Обзор
 
-`useTheme` позволяет переключать режимы оформления интерфейса (детский, семейный, родительский), управляя атрибутом `data-theme` на корневом HTML-элементе (`<html>`). Это обеспечивает применение соответствующих CSS-стилей без перезагрузки страницы и с возможностью восстановления выбора пользователя между сессиями.
+`useTheme` управляет атрибутом `data-theme` у корневого элемента (`<html>`), что позволяет применять разные CSS-варианты без перезагрузки страницы.
+Тема восстанавливается из `localStorage` между сессиями и синхронизируется с двумя реактивными флагами:
+
+- `isChildModeActive`
+- `isParentModeActive`
+
+Комбинации этих флагов определяют текущую тему:
+
+| isChild | isParent | Активная тема |
+| ------- | -------- | ------------- |
+| ✅      | ❌       | `child`       |
+| ❌      | ✅       | `parent`      |
+| ✅      | ✅       | `family`      |
+
+---
 
 ## Импорт и использование
 
 ```typescript
 import { useTheme } from "@/composables/useTheme";
 
-const { setTheme, initTheme, getStoredTheme } = useTheme();
+const {
+  isChildModeActive,
+  isParentModeActive,
+  setTheme,
+  initTheme,
+  getStoredTheme,
+  toggleChildFlag,
+  toggleParentFlag,
+} = useTheme();
 ```
+
+---
 
 ## Типы данных
 
@@ -22,63 +49,78 @@ const { setTheme, initTheme, getStoredTheme } = useTheme();
 type BodyMode = "child" | "family" | "parent";
 ```
 
-- `child` — детский режим
-- `family` — семейный режим (базовый, не требует установки атрибута `data-theme`)
-- `parent` — родительский режим
+---
 
-## API методы
+## API
 
-### `setTheme(type: BodyMode): void`
+### Состояния
 
-Устанавливает тему приложения и сохраняет выбор в `localStorage`.
+- **`isChildModeActive: Ref<boolean>`**
+  Флаг активности детского режима
 
-**Алгоритм работы:**
-
-1. Получает ссылку на `<html>`.
-2. Очищает атрибут `data-theme`.
-3. Устанавливает `data-theme="child"` или `data-theme="parent"`.
-   Для семейного режима атрибут не добавляется.
-4. Сохраняет выбранную тему в `localStorage` по ключу `"palette"`.
-
-**Пример:**
-
-```typescript
-setTheme("child"); // активировать детскую тему
-setTheme("parent"); // активировать родительскую тему
-setTheme("family"); // вернуться к базовой теме
-```
+- **`isParentModeActive: Ref<boolean>`**
+  Флаг активности родительского режима
 
 ---
 
-### `getStoredTheme(): BodyMode | null`
+### Основные методы
 
-Возвращает тему, сохранённую в `localStorage`, или `null`, если её нет.
+#### `setTheme(type: BodyMode): void`
 
-**Особенности:**
+Применяет тему напрямую, обновляет `data-theme`, сохраняет выбор в `localStorage` и синхронизирует флаги.
 
-- Данные извлекаются напрямую без встроенной валидации.
-- Если в `localStorage` записано некорректное значение, оно всё равно будет приведено к `BodyMode | null`.
+#### `getStoredTheme(): BodyMode | null`
 
-**Пример:**
+Возвращает тему из `localStorage` или `null`, если её нет.
 
-```typescript
-const theme = getStoredTheme();
-console.log(theme); // "child" | "family" | "parent" | null
-```
+#### `initTheme(): void`
+
+Инициализирует тему при старте приложения: извлекает её из `localStorage` и применяет.
 
 ---
 
-### `initTheme(): void`
+### Методы для работы с флагами
 
-Инициализирует тему при загрузке приложения.
+#### `toggleChildFlag(): void`
 
-**Алгоритм работы:**
+Инвертирует флаг детского режима и пересчитывает тему.
 
-1. Извлекает тему через `getStoredTheme()`.
-2. Если тема найдена, вызывает `setTheme()`.
-3. Если нет — остаётся базовая (`family`).
+#### `toggleParentFlag(): void`
 
-**Рекомендуемое размещение:**
+Инвертирует флаг родительского режима и пересчитывает тему.
+
+#### `toggleFlag(type: "child" | "parent"): void`
+
+Универсальный метод переключения флагов.
+
+---
+
+### Вспомогательные методы
+
+(обычно не нужны напрямую, но могут пригодиться при расширении)
+
+- **`applyCurrentTheme()`** — вычисляет тему из комбинации флагов и применяет её.
+- **`ensureAtLeastOneModeActive()`** — предотвращает ситуацию, когда оба флага выключены (в этом случае включаются оба → семейная тема).
+- **`updateSwitchStatesFromTheme(theme: BodyMode)`** — выставляет флаги в соответствии с темой.
+
+---
+
+## Интеграция с CSS
+
+Для применения тем можно использовать CSS-варианты (например, в Tailwind):
+
+```css
+@variant child ([data-theme="child"] &);
+@variant parent ([data-theme="parent"] &);
+```
+
+`family` используется как базовая тема без атрибутов.
+
+---
+
+## Примеры использования
+
+### Инициализация темы
 
 ```typescript
 import { onMounted } from "vue";
@@ -93,64 +135,48 @@ onMounted(() => {
 
 ---
 
-## Интеграция с CSS
-
-Для работы с темами требуется настройка CSS-вариантов (например, с Tailwind):
-
-```css
-@variant child ([data-theme="child"] &);
-@variant parent ([data-theme="parent"] &);
-```
-
-Семейная тема (`family`) применяется как базовая, без атрибутов.
-
----
-
-## Примеры использования
-
-### Компонент с переключателем тем
+### Переключатель тем с флагами
 
 ```vue
 <script setup lang="ts">
-import { onMounted } from "vue";
 import { useTheme } from "@/composables/useTheme";
 
-const { setTheme, initTheme } = useTheme();
-
-onMounted(() => {
-  initTheme();
-});
+const {
+  isChildModeActive,
+  isParentModeActive,
+  toggleChildFlag,
+  toggleParentFlag,
+} = useTheme();
 </script>
 
 <template>
   <div>
-    <button @click="setTheme('child')">Детская</button>
-    <button @click="setTheme('family')">Семейная</button>
-    <button @click="setTheme('parent')">Родительская</button>
+    <button @click="toggleChildFlag">
+      Детский ({{ isChildModeActive ? "вкл" : "выкл" }})
+    </button>
+    <button @click="toggleParentFlag">
+      Родительский ({{ isParentModeActive ? "вкл" : "выкл" }})
+    </button>
   </div>
 </template>
 ```
 
-### Получение текущей темы
+---
+
+### Установка темы напрямую
 
 ```typescript
-const { getStoredTheme } = useTheme();
+const { setTheme } = useTheme();
 
-const current = getStoredTheme();
-console.log(current); // "child" | "family" | "parent" | null
+setTheme("child"); // принудительно включить детскую
+setTheme("parent"); // принудительно включить родительскую
+setTheme("family"); // вернуться к базовой
 ```
 
 ---
 
 ## Рекомендации по расширению
 
-- **Валидация localStorage**: стоит добавить проверку на корректность значений перед применением.
-- **Новые темы**: для расширения достаточно обновить `BodyMode`, CSS-варианты и логику в `setTheme()`.
-- **Синхронизация вкладок**: текущая версия не отслеживает изменения темы в других вкладках.
-
----
-
-## Ограничения
-
-- Требуется поддержка `localStorage`.
-- При повреждённых данных в `localStorage` может вернуться некорректное значение — рекомендуется добавить дополнительную проверку.
+- Добавить валидацию значений из `localStorage`.
+- Расширять список тем через `BodyMode` и соответствующую CSS-логику.
+- При необходимости синхронизировать состояние между вкладками через `storage`-событие.
