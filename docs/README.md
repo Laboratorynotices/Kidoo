@@ -27,10 +27,11 @@
 
 ## Доступные эндпоинты
 
-| Эндпоинт                   | Описание                   | Документация                            |
-| -------------------------- | -------------------------- | --------------------------------------- |
-| `/api/v1/seo/{lang}.json`  | SEO метаданные для страниц | [SEO Documentation](endpoints/seo.md)   |
-| `/api/v1/menu/{lang}.json` | Навигационное меню сайта   | [Menu Documentation](endpoints/menu.md) |
+| Эндпоинт                          | Описание                   | Документация                                          |
+| --------------------------------- | -------------------------- | ----------------------------------------------------- |
+| `/api/v1/seo/{lang}.json`         | SEO метаданные для страниц | [SEO Documentation](endpoints/seo.md)                 |
+| `/api/v1/menu/{lang}.json`        | Навигационное меню сайта   | [Menu Documentation](endpoints/menu.md)               |
+| `/api/v1/hero-slides/{lang}.json` | Слайды для секции Hero     | [Hero Slides Documentation](endpoints/hero-slides.md) |
 
 ## Общие поля ответа
 
@@ -50,6 +51,7 @@
 ```http
 GET /api/v1/seo/ru.json
 GET /api/v1/menu/de.json
+GET /api/v1/hero-slides/en.json
 ```
 
 ## Мультиязычность
@@ -82,7 +84,11 @@ public/api/v1/
 │   ├── ru.json
 │   ├── de.json
 │   └── en.json
-└── menu/
+├── menu/
+│   ├── ru.json
+│   ├── de.json
+│   └── en.json
+└── hero-slides/
     ├── ru.json
     ├── de.json
     └── en.json

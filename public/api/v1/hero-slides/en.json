@@ -1,0 +1,47 @@
+{
+  "language": "en",
+  "slides": [
+    {
+      "image": "hero1.jpg",
+      "title": "Active Outdoor Games",
+      "name": "Football Fun",
+      "description": "Join our fun football sessions on the green lawn! We encourage team spirit, physical activity, and the joy of movement.",
+      "btn": { "text": "Sign Up for the Class", "link": "#" }
+    },
+    {
+      "image": "hero2.jpg",
+      "title": "Winter Adventures in the Mountains",
+      "name": "Ski Lessons",
+      "description": "We teach children to ski in a safe and friendly atmosphere. Professional instructors and modern equipment.",
+      "btn": { "text": "View Schedule", "link": "#" }
+    },
+    {
+      "image": "hero3.jpg",
+      "title": "Winter Fun for Kids",
+      "name": "Sledding",
+      "description": "Safe and fun sledding for the little ones. We create unforgettable winter memories!",
+      "btn": { "text": "Join Now", "link": "#" }
+    },
+    {
+      "image": "hero4.jpg",
+      "title": "Autumn Nature Walks",
+      "name": "Cycling Tours",
+      "description": "Ride along scenic autumn trails by bike! Fresh air, beautiful landscapes, and active fun for the whole family.",
+      "btn": { "text": "Join In", "link": "#" }
+    },
+    {
+      "image": "hero5.jpg",
+      "title": "Climbing Adventures",
+      "name": "Kids at the Climbing Gym",
+      "description": "Exciting and safe climbing activities for kids. We build agility, confidence, and a love for active living.",
+      "btn": { "text": "Sign Up", "link": "#" }
+    },
+    {
+      "image": "hero6.jpg",
+      "title": "Water Adventures",
+      "name": "Kayak Trip",
+      "description": "An exciting kayak trip along scenic routes. Relaxation, fresh air, and harmony with nature.",
+      "btn": { "text": "Join", "link": "#" }
+    }
+  ]
+}

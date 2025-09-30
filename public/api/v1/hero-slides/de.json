@@ -1,0 +1,47 @@
+{
+  "language": "de",
+  "slides": [
+    {
+      "image": "hero1.jpg",
+      "title": "Aktive Spiele an der frischen Luft",
+      "name": "Fußballspaß",
+      "description": "Machen Sie mit bei unseren lustigen Fußballaktivitäten auf der grünen Wiese! Wir fördern Teamgeist, körperliche Aktivität und Freude an der Bewegung.",
+      "btn": { "text": "Für den Kurs anmelden", "link": "#" }
+    },
+    {
+      "image": "hero2.jpg",
+      "title": "Winterabenteuer in den Bergen",
+      "name": "Skikurse",
+      "description": "Wir bringen Kindern das Skifahren in einer sicheren und freundlichen Atmosphäre bei. Professionelle Lehrer und moderne Ausrüstung.",
+      "btn": { "text": "Stundenplan ansehen", "link": "#" }
+    },
+    {
+      "image": "hero3.jpg",
+      "title": "Winterfreuden für die Kleinen",
+      "name": "Schlittenfahren",
+      "description": "Sicheres und spannendes Schlittenfahren für die Kleinsten. Wir schaffen unvergessliche Wintererinnerungen!",
+      "btn": { "text": "Mitmachen", "link": "#" }
+    },
+    {
+      "image": "hero4.jpg",
+      "title": "Herbstspaziergänge in der Natur",
+      "name": "Fahrradtouren",
+      "description": "Radeln Sie auf malerischen Herbstwegen! Frische Luft, schöne Landschaften und aktive Erholung für die ganze Familie.",
+      "btn": { "text": "Teilnehmen", "link": "#" }
+    },
+    {
+      "image": "hero5.jpg",
+      "title": "Wir erklimmen Gipfel",
+      "name": "Kinder in der Kletterhalle",
+      "description": "Spannende und sichere Kletterkurse für Kinder. Wir fördern Geschicklichkeit, Selbstvertrauen und Freude an Bewegung.",
+      "btn": { "text": "Anmelden", "link": "#" }
+    },
+    {
+      "image": "hero6.jpg",
+      "title": "Wasserabenteuer",
+      "name": "Kajaktour",
+      "description": "Eine spannende Kajaktour auf malerischen Routen. Entspannung, frische Luft und Harmonie mit der Natur.",
+      "btn": { "text": "Mitmachen", "link": "#" }
+    }
+  ]
+}

@@ -3,6 +3,7 @@ import { onMounted } from "vue";
 import { useTheme } from "@/composables/useTheme";
 
 import HeaderApp from "@/components/header/HeaderApp.vue";
+import HeroSection from "@/components/dynamic/HeroSection.vue";
 
 // Получаем методы для работы с темами из композабла
 const { setTheme, initTheme } = useTheme();
@@ -19,6 +20,7 @@ onMounted(() => {
 
 <template>
   <HeaderApp />
+  <HeroSection />
   <div>
     <p>{{ $t("introduce yourself") }}</p>
     <button @click="setTheme('child')">{{ $t("child") }}</button>

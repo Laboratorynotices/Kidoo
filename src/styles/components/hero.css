@@ -1,0 +1,171 @@
+/* .carousel */
+.hero {
+  @apply w-full h-screen
+  overflow-hidden relative
+  mt-[-80px];
+
+  & .carousel {
+    /* Базовые стили для карточек .item —
+    они абсолютные и располагаются поверх друг друга */
+    & .item {
+      @apply absolute
+        hidden md:block
+        w-[180px] h-[250px]
+        left-[70%] top-[80%]
+        shadow-[var(--shadow-default)]
+        child:rounded-full rounded-xl parent:rounded-lg
+        bg-[50%_50%] bg-cover
+        transform -translate-y-[70%];
+
+      /* 
+      transition: 1s;
+      z-index: 100;
+      */
+
+      /* Первый и второй слайды растянуты на весь карусельный контейнер — это эффект "главного" слайда */
+      &:nth-child(1),
+      &:nth-child(2) {
+        @apply block
+        w-full h-full
+        top-0 left-0
+        rounded-none
+        translate-y-0;
+      }
+
+      /* Последующие карточки позиционируются справа с шагом 200px */
+      &:nth-child(3) {
+        @apply left-[67%];
+      }
+
+      &:nth-child(4) {
+        left: calc(67% + 200px);
+      }
+
+      &:nth-child(5) {
+        left: calc(67% + 400px);
+      }
+
+      &:nth-child(n + 6) {
+        left: calc(67% + 600px);
+      }
+
+      & .container {
+        @apply hidden;
+      }
+
+      &:nth-child(2) .container {
+        @apply flex flex-col
+        h-full mx-auto;
+
+        & .content {
+          @apply flex flex-col gap-4
+            h-fit w-full sm:w-9/12 md:w-7/12 xl:w-8/12
+            p-4 pb-6
+            my-auto sm:mx-auto md:mx-0
+            child:sm:rounded-2xl sm:rounded-xl parent:sm:rounded-lg
+            bg-family-bg-light/90 dark:bg-family-bg-dark/90
+            child:bg-child-bg-light/90 dark:child:bg-child-bg-dark/90
+            parent:bg-parent-bg-light/90 dark:parent:bg-parent-bg-dark/90;
+
+          & .title {
+            @apply text-[length:var(--font-family-h1)]
+                sm:text-[length:var(--font-family-h1-sm)]
+                md:text-[length:var(--font-family-h1-md)]
+                lg:text-[length:var(--font-family-h1-lg)]
+                xl:text-[length:var(--font-family-h1-xl)]
+                2xl:text-[length:var(--font-family-h1-2xl)]
+                child:text-[length:var(--font-child-h1)]
+                child:sm:text-[length:var(--font-child-h1-sm)]
+                child:md:text-[length:var(--font-child-h1-md)]
+                child:lg:text-[length:var(--font-child-h1-lg)]
+                child:xl:text-[length:var(--font-child-h1-xl)]
+                child:2xl:text-[length:var(--font-child-h1-2xl)]
+                parent:text-[length:var(--font-parent-h1)]
+                parent:sm:text-[length:var(--font-parent-h1-sm)]
+                parent:md:text-[length:var(--font-parent-h1-md)]
+                parent:lg:text-[length:var(--font-parent-h1-lg)]
+                parent:xl:text-[length:var(--font-parent-h1-xl)]
+                parent:2xl:text-[length:var(--font-parent-h1-2xl)]
+                uppercase
+                font-bold;
+            /*
+            w-full md:w-2/3
+          opacity: 0;
+ */
+            animation: animate 1s ease-in-out 0.3s 1 forwards;
+          }
+
+          & .name {
+            @apply hidden parent:block
+                md:block
+                text-[length:var(--font-family-h2)]
+                sm:text-[length:var(--font-family-h2-sm)]
+                md:text-[length:var(--font-family-h2-md)]
+                lg:text-[length:var(--font-family-h2-lg)]
+                xl:text-[length:var(--font-family-h2-xl)]
+                2xl:text-[length:var(--font-family-h2-2xl)]
+                child:text-[length:var(--font-child-h2)]
+                child:sm:text-[length:var(--font-child-h2-sm)]
+                child:md:text-[length:var(--font-child-h2-md)]
+                child:lg:text-[length:var(--font-child-h2-lg)]
+                child:xl:text-[length:var(--font-child-h2-xl)]
+                child:2xl:text-[length:var(--font-child-h2-2xl)]
+                parent:text-[length:var(--font-parent-h2)]
+                parent:sm:text-[length:var(--font-parent-h2-sm)]
+                parent:md:text-[length:var(--font-parent-h2-md)]
+                parent:lg:text-[length:var(--font-parent-h2-lg)]
+                parent:xl:text-[length:var(--font-parent-h2-xl)]
+                parent:2xl:text-[length:var(--font-parent-h2-2xl)];
+          }
+
+          & .description {
+            @apply hidden lg:block
+                text-[length:var(--font-family-body)]
+                sm:text-[length:var(--font-family-body-sm)]
+                md:text-[length:var(--font-family-body-md)]
+                lg:text-[length:var(--font-family-body-lg)]
+                xl:text-[length:var(--font-family-body-xl)]
+                2xl:text-[length:var(--font-family-body-2xl)]
+                child:text-[length:var(--font-child-body)]
+                child:sm:text-[length:var(--font-child-body-sm)]
+                child:md:text-[length:var(--font-child-body-md)]
+                child:lg:text-[length:var(--font-child-body-lg)]
+                child:xl:text-[length:var(--font-child-body-xl)]
+                child:2xl:text-[length:var(--font-child-body-2xl)]
+                parent:text-[length:var(--font-parent-body)]
+                parent:sm:text-[length:var(--font-parent-body-sm)]
+                parent:md:text-[length:var(--font-parent-body-md)]
+                parent:lg:text-[length:var(--font-parent-body-lg)]
+                parent:xl:text-[length:var(--font-parent-body-xl)]
+                parent:2xl:text-[length:var(--font-parent-body-2xl)];
+          }
+
+          & .buttoms {
+            @apply flex items-center gap-8;
+
+            & .btn {
+              @apply flex items-center justify-center
+              w-fit cursor-pointer
+              text-[1.2rem] font-medium
+              text-family-text-light dark:text-family-text-dark
+              child:text-child-text-light dark:child:text-child-text-dark
+              parent:text-parent-text-light dark:parent:text-parent-text-dark
+              whitespace-nowrap px-[15px] pt-[3px] pb-[7px]
+              child:rounded-full rounded-xl parent:rounded-lg
+              border-2 border-solid
+              border-family-accent-light dark:border-family-accent-dark
+              child:border-child-accent-light dark:child:border-child-accent-dark
+              parent:border-parent-accent-light dark:parent:border-parent-accent-dark
+              bg-family-secondary-light dark:bg-family-secondary-dark
+              child:bg-child-secondary-light dark:child:bg-child-secondary-dark
+              parent:bg-parent-secondary-light dark:parent:bg-parent-secondary-dark
+              transition-transform duration-[0.7s] ease-[ease]
+              hover:scale-110
+              hover:shadow-[var(--shadow-soft)];
+            }
+          }
+        }
+      }
+    }
+  }
+}
