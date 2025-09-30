@@ -1,6 +1,7 @@
 .header {
   @apply flex items-center justify-center
-    relative
+  sticky
+  overflow-x-clip lg:overflow-x-visible
   h-20 w-full top-0
   shadow-[var(--shadow-default)]
   z-[var(--z-index-floating-button)]
@@ -14,8 +15,7 @@
 
   & .container {
     @apply flex items-center justify-between
-    w-full
-    overflow-x-clip lg:overflow-x-visible;
+    w-full;
 
     & .navbar-logo {
       @apply text-[1.7rem] md:text-[2rem]
@@ -144,12 +144,12 @@
           hover:scale-110;
 
           & a {
-            @apply no-underline text-[1.2rem] font-medium
+            @apply text-[1.2rem] font-medium
             text-family-text-light dark:text-family-text-dark
             child:text-child-text-light dark:child:text-child-text-dark
             parent:text-parent-text-light dark:parent:text-parent-text-dark
             transition-colors duration-[0.7s] ease-[ease]
-            whitespace-nowrap px-[15px] py-[3px] 
+            whitespace-nowrap px-[15px] py-[3px]
             child:rounded-full rounded-xl parent:rounded-lg
             border-2 border-solid border-transparent
             md:text-[1.3rem] md:px-5 md:py-[3px]
@@ -157,10 +157,7 @@
 
             &:hover,
             &.active {
-              @apply text-family-text-light dark:text-family-text-dark
-                child:text-child-text-light dark:child:text-child-text-dark
-                parent:text-parent-text-light dark:parent:text-parent-text-dark
-                border-family-accent-light dark:border-family-accent-dark
+              @apply border-family-accent-light dark:border-family-accent-dark
                 child:border-child-accent-light dark:child:border-child-accent-dark
                 parent:border-parent-accent-light dark:parent:border-parent-accent-dark
                 bg-family-secondary-light dark:bg-family-secondary-dark
