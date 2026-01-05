@@ -7,7 +7,7 @@
   & .carousel {
     /* Базовые стили для карточек .item —
     они абсолютные и располагаются поверх друг друга */
-    & .item {
+    .item {
       @apply absolute
         hidden md:block
         w-[180px] h-[250px]
@@ -17,14 +17,12 @@
         bg-[50%_50%] bg-cover
         transform -translate-y-[70%];
 
-      /* 
       transition: 1s;
       z-index: 100;
-      */
 
       /* Первый и второй слайды растянуты на весь карусельный контейнер — это эффект "главного" слайда */
-      &:nth-child(1),
-      &:nth-child(2) {
+      &[data-position="0"],
+      &[data-position="1"] {
         @apply block
         w-full h-full
         top-0 left-0
@@ -33,19 +31,23 @@
       }
 
       /* Последующие карточки позиционируются справа с шагом 200px */
-      &:nth-child(3) {
+      &[data-position="2"] {
         @apply left-[67%];
       }
 
-      &:nth-child(4) {
+      &[data-position="3"] {
         left: calc(67% + 200px);
       }
 
-      &:nth-child(5) {
+      &[data-position="4"] {
         left: calc(67% + 400px);
       }
 
-      &:nth-child(n + 6) {
+      &[data-position="5"],
+      &[data-position="6"],
+      &[data-position="7"],
+      &[data-position="8"],
+      &[data-position="9"] {
         left: calc(67% + 600px);
       }
 
@@ -53,7 +55,7 @@
         @apply hidden;
       }
 
-      &:nth-child(2) .container {
+      &[data-position="1"] .container {
         @apply flex flex-col
         h-full mx-auto;
 
@@ -90,8 +92,8 @@
                 font-bold;
             /*
             w-full md:w-2/3
-          opacity: 0;
- */
+            opacity: 0;
+            */
             animation: animate 1s ease-in-out 0.3s 1 forwards;
           }
 
@@ -166,6 +168,24 @@
           }
         }
       }
+    }
+  }
+
+  /* Прогресс-балка карусели, сколько ещё этот слайд будет отображаться */
+  .hero-progress {
+    @apply absolute
+    top-0 left-0 right-0 h-1
+    overflow-hidden
+    bg-family-bg-light dark:bg-family-bg-dark
+    child:bg-child-bg-light dark:child:bg-child-bg-dark
+    parent:bg-parent-bg-light dark:parent:bg-parent-bg-dark
+    z-2;
+
+    .hero-progress__fill {
+      @apply h-[100%]
+      bg-family-accent-light dark:bg-family-accent-dark
+      child:bg-child-accent-light dark:child:bg-child-accent-dark
+      parent:bg-parent-accent-light dark:parent:bg-parent-accent-dark;
     }
   }
 }
