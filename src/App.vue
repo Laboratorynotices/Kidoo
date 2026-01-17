@@ -1,30 +1,61 @@
 <script setup lang="ts">
 import { onMounted } from "vue";
 import { useTheme } from "@/composables/useTheme";
+import { useLayout } from "@/composables/layout";
+import type { BodyMode } from "@/types/theme";
 
 import HeaderApp from "@/components/header/HeaderApp.vue";
-import HeroSection from "@/components/dynamic/HeroSection.vue";
 
 // Получаем методы для работы с темами из композабла
-const { setTheme, initTheme } = useTheme();
+const { currentTheme, setTheme, initTheme } = useTheme();
+
+// Получаем методы для работы с динамическим layout
+const {
+  visibleSections,
+  resolveComponent,
+  fetchConfigs,
+  /*, isLoading */
+} = useLayout();
 
 /**
  * Хук жизненного цикла - выполняется после монтирования компонента
  * Инициализирует тему на основе сохраненных пользовательских предпочтений
+ * и загружает конфигурацию layout для текущей темы
  */
-onMounted(() => {
+onMounted(async () => {
   // Восстанавливаем ранее выбранную тему из localStorage
   initTheme();
+
+  // Загружаем конфигурацию компонентов для текущей темы
+  await fetchConfigs(currentTheme.value);
 });
+
+/**
+ * Обработчик смены темы
+ */
+const handleThemeChange = async (theme: BodyMode) => {
+  setTheme(theme);
+  await fetchConfigs(theme);
+};
 </script>
 
 <template>
   <HeaderApp />
-  <HeroSection />
+
+  <!-- TODO: Добавить skeleton loader когда isLoading === true -->
+
+  <!-- Динамический рендеринг секций на основе конфигурации из API -->
+  <component
+    v-for="section in visibleSections"
+    :key="section.name"
+    :is="resolveComponent(section.name)"
+    v-bind="section.props"
+  />
+
   <div>
     <p>{{ $t("introduce yourself") }}</p>
-    <button @click="setTheme('child')">{{ $t("child") }}</button>
-    <button @click="setTheme('family')">{{ $t("family") }}</button>
-    <button @click="setTheme('parent')">{{ $t("parents") }}</button>
+    <button @click="handleThemeChange('child')">{{ $t("child") }}</button>
+    <button @click="handleThemeChange('family')">{{ $t("family") }}</button>
+    <button @click="handleThemeChange('parent')">{{ $t("parents") }}</button>
   </div>
 </template>

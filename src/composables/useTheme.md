@@ -21,6 +21,8 @@
 | ❌      | ✅       | `parent`      |
 | ✅      | ✅       | `family`      |
 
+**Важно:** Композабл также экспортирует переменную `currentTheme`, которая используется системой динамической загрузки компонентов для получения актуальной конфигурации layout.
+
 ---
 
 ## Импорт и использование
@@ -29,6 +31,7 @@
 import { useTheme } from "@/composables/useTheme";
 
 const {
+  currentTheme,
   isChildModeActive,
   isParentModeActive,
   setTheme,
@@ -55,6 +58,11 @@ type BodyMode = "child" | "family" | "parent";
 
 ### Состояния
 
+- **`currentTheme: Ref<BodyMode>`**
+  Реактивная переменная, хранящая текущую активную тему. Используется для координации с системой динамической загрузки компонентов. При изменении темы через `setTheme()` или переключение флагов автоматически обновляется.
+
+  **Значение по умолчанию:** `"family"`
+
 - **`isChildModeActive: Ref<boolean>`**
   Флаг активности детского режима
 
@@ -67,15 +75,45 @@ type BodyMode = "child" | "family" | "parent";
 
 #### `setTheme(type: BodyMode): void`
 
-Применяет тему напрямую, обновляет `data-theme`, сохраняет выбор в `localStorage` и синхронизирует флаги.
+Применяет тему напрямую, обновляет `data-theme`, сохраняет выбор в `localStorage`, синхронизирует флаги и обновляет `currentTheme`.
+
+**Пример:**
+
+```typescript
+setTheme("child"); // Устанавливает детскую тему
+// currentTheme.value автоматически обновится на "child"
+```
 
 #### `getStoredTheme(): BodyMode | null`
 
 Возвращает тему из `localStorage` или `null`, если её нет.
 
+**Пример:**
+
+```typescript
+const saved = getStoredTheme();
+if (saved) {
+  console.log(`Сохранённая тема: ${saved}`);
+}
+```
+
 #### `initTheme(): void`
 
-Инициализирует тему при старте приложения: извлекает её из `localStorage` и применяет.
+Инициализирует тему при старте приложения: извлекает её из `localStorage`, применяет и обновляет `currentTheme`. Если сохранённой темы нет, использует значение по умолчанию (`"family"`).
+
+**Типичное использование:**
+
+```typescript
+import { onMounted } from "vue";
+import { useTheme } from "@/composables/useTheme";
+
+const { initTheme, currentTheme } = useTheme();
+
+onMounted(() => {
+  initTheme();
+  // После инициализации currentTheme содержит актуальную тему
+});
+```
 
 ---
 
@@ -83,15 +121,17 @@ type BodyMode = "child" | "family" | "parent";
 
 #### `toggleChildFlag(): void`
 
-Инвертирует флаг детского режима и пересчитывает тему.
+Инвертирует флаг детского режима, пересчитывает тему и обновляет `currentTheme`.
 
 #### `toggleParentFlag(): void`
 
-Инвертирует флаг родительского режима и пересчитывает тему.
+Инвертирует флаг родительского режима, пересчитывает тему и обновляет `currentTheme`.
 
 #### `toggleFlag(type: "child" | "parent"): void`
 
 Универсальный метод переключения флагов.
+
+**Примечание:** При переключении флагов `currentTheme` автоматически обновляется в соответствии с новой комбинацией флагов.
 
 ---
 
@@ -99,9 +139,9 @@ type BodyMode = "child" | "family" | "parent";
 
 (обычно не нужны напрямую, но могут пригодиться при расширении)
 
-- **`applyCurrentTheme()`** — вычисляет тему из комбинации флагов и применяет её.
+- **`applyCurrentTheme()`** — вычисляет тему из комбинации флагов, применяет её и обновляет `currentTheme`.
 - **`ensureAtLeastOneModeActive()`** — предотвращает ситуацию, когда оба флага выключены (в этом случае включаются оба → семейная тема).
-- **`updateSwitchStatesFromTheme(theme: BodyMode)`** — выставляет флаги в соответствии с темой.
+- **`updateSwitchStatesFromTheme(theme: BodyMode)`** — выставляет флаги в соответствии с темой и обновляет `currentTheme`.
 
 ---
 
@@ -118,18 +158,52 @@ type BodyMode = "child" | "family" | "parent";
 
 ---
 
+## Интеграция с системой динамической загрузки компонентов
+
+Переменная `currentTheme` служит ключом для загрузки соответствующей конфигурации layout через композабл `useLayout`:
+
+```typescript
+import { useTheme } from "@/composables/useTheme";
+import { useLayout } from "@/composables/layout";
+
+const { currentTheme, setTheme } = useTheme();
+const { fetchConfigs } = useLayout();
+
+// При инициализации
+onMounted(async () => {
+  initTheme();
+  await fetchConfigs(currentTheme.value);
+});
+
+// При смене темы
+const handleThemeChange = async (theme: BodyMode) => {
+  setTheme(theme);
+  await fetchConfigs(currentTheme.value);
+};
+```
+
+Такая интеграция обеспечивает синхронизацию визуального оформления и набора отображаемых компонентов.
+
+---
+
 ## Примеры использования
 
-### Инициализация темы
+### Инициализация темы с загрузкой конфигурации
 
 ```typescript
 import { onMounted } from "vue";
 import { useTheme } from "@/composables/useTheme";
+import { useLayout } from "@/composables/layout";
 
-const { initTheme } = useTheme();
+const { currentTheme, initTheme } = useTheme();
+const { fetchConfigs } = useLayout();
 
-onMounted(() => {
+onMounted(async () => {
+  // Восстанавливаем тему
   initTheme();
+
+  // Загружаем конфигурацию компонентов для текущей темы
+  await fetchConfigs(currentTheme.value);
 });
 ```
 
@@ -142,6 +216,7 @@ onMounted(() => {
 import { useTheme } from "@/composables/useTheme";
 
 const {
+  currentTheme,
   isChildModeActive,
   isParentModeActive,
   toggleChildFlag,
@@ -151,6 +226,8 @@ const {
 
 <template>
   <div>
+    <p>Текущая тема: {{ currentTheme }}</p>
+
     <button @click="toggleChildFlag">
       Детский ({{ isChildModeActive ? "вкл" : "выкл" }})
     </button>
@@ -163,20 +240,93 @@ const {
 
 ---
 
-### Установка темы напрямую
+### Установка темы напрямую с обновлением layout
 
 ```typescript
-const { setTheme } = useTheme();
+import { useTheme } from "@/composables/useTheme";
+import { useLayout } from "@/composables/layout";
 
-setTheme("child"); // принудительно включить детскую
-setTheme("parent"); // принудительно включить родительскую
-setTheme("family"); // вернуться к базовой
+const { currentTheme, setTheme } = useTheme();
+const { fetchConfigs } = useLayout();
+
+const changeToChildTheme = async () => {
+  setTheme("child"); // currentTheme.value теперь "child"
+  await fetchConfigs(currentTheme.value); // Загружаем конфигурацию для детской темы
+};
+
+const changeToParentTheme = async () => {
+  setTheme("parent");
+  await fetchConfigs(currentTheme.value);
+};
+
+const changeToFamilyTheme = async () => {
+  setTheme("family");
+  await fetchConfigs(currentTheme.value);
+};
+```
+
+---
+
+### Реактивное отслеживание смены темы
+
+```typescript
+import { watch } from "vue";
+import { useTheme } from "@/composables/useTheme";
+
+const { currentTheme } = useTheme();
+
+watch(currentTheme, (newTheme, oldTheme) => {
+  console.log(`Тема изменена: ${oldTheme} → ${newTheme}`);
+  // Здесь можно выполнить дополнительные действия при смене темы
+});
 ```
 
 ---
 
 ## Рекомендации по расширению
 
-- Добавить валидацию значений из `localStorage`.
-- Расширять список тем через `BodyMode` и соответствующую CSS-логику.
-- При необходимости синхронизировать состояние между вкладками через `storage`-событие.
+- **Валидация данных из localStorage:** Добавить проверку, что сохранённое значение соответствует типу `BodyMode`, чтобы избежать ошибок при повреждении данных.
+
+- **Синхронизация между вкладками:** Использовать событие `storage` для синхронизации темы между разными вкладками браузера:
+
+  ```typescript
+  window.addEventListener("storage", (e) => {
+    if (e.key === THEME_KEY && e.newValue) {
+      setTheme(e.newValue as BodyMode);
+    }
+  });
+  ```
+
+- **Расширение списка тем:** При добавлении новых тем обновить тип `BodyMode`, логику в `applyCurrentTheme()` и соответствующие CSS-стили.
+
+- **Анимация переходов:** Добавить CSS-transitions для плавной смены тем, используя класс на `<html>` элементе.
+
+- **Координация с API:** При смене темы можно отправлять информацию на сервер для сохранения в профиле пользователя (если есть аутентификация).
+
+---
+
+## Технические детали
+
+### Хранение данных
+
+Тема сохраняется в `localStorage` под ключом, определённым константой `THEME_KEY`. Это позволяет сохранять выбор пользователя между сессиями.
+
+### Реактивность
+
+Все экспортируемые переменные являются реактивными (`Ref<T>`), что обеспечивает автоматическое обновление UI при изменении темы. Переменная `currentTheme` особенно важна для интеграции с другими частями приложения, которым нужно знать актуальную тему.
+
+### Приоритет установки темы
+
+При конфликте между флагами и прямой установкой темы через `setTheme()`:
+
+1. Флаги обновляются в соответствии с установленной темой
+2. `currentTheme` всегда отражает реальное состояние `data-theme` атрибута
+3. Изменения сохраняются в `localStorage`
+
+---
+
+## Связанная документация
+
+- [useLayout](/docs/composables/useLayout.md) - Система динамической загрузки компонентов
+- [useDynamicComponents](/docs/composables/useDynamicComponents.md) - Автоматическое обнаружение компонентов
+- [useLayoutConfig](/docs/composables/useLayoutConfig.md) - Управление конфигурацией layout

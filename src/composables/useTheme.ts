@@ -13,6 +13,9 @@ import { ref } from "vue";
 const isChildModeActive = ref(true);
 const isParentModeActive = ref(true);
 
+// Реактивная переменная для текущей темы
+const currentTheme = ref<BodyMode>("family");
+
 /**
  * Хук для работы с темами приложения
  *
@@ -167,6 +170,7 @@ export const useTheme = () => {
      * Устанавливает новую тему и сохраняет выбор
      */
     setTheme,
+    currentTheme,
 
     /**
      * Инициализирует тему из сохраненных данных
