@@ -28,6 +28,7 @@ export function useLayoutConfig(availableComponents: string[]) {
     try {
       // Используем apiGet для корректной в разных средах работы с базовым URL
       const allConfigs = await apiGet<BatchResponse>(
+        // TODO: к URL добавить параметр availableComponents
         `layout/batch-${theme}.json`,
       );
 
