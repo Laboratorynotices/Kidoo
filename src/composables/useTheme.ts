@@ -51,6 +51,9 @@ export const useTheme = () => {
     // Сохраняет выбор пользователя в localStorage для восстановления при следующем визите
     localStorage.setItem(STORAGE_KEY, type);
 
+    // Обновляем реактивное состояние текущей темы
+    currentTheme.value = type;
+
     // Обновляем состояния флагов на основе установленной темы
     updateSwitchStatesFromTheme(type);
   };
@@ -81,6 +84,9 @@ export const useTheme = () => {
       setTheme(storedTheme);
       // Восстанавливаем состояния флагов на основе темы
       updateSwitchStatesFromTheme(storedTheme);
+    } else {
+      // Если нет сохранённой темы, устанавливаем значение по умолчанию
+      currentTheme.value = "family";
     }
   };
 
