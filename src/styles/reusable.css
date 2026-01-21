@@ -1,23 +1,22 @@
 /* ============
   Reusable Styles
+  Utilities
 =============== */
 
-@layer components {
-  .bg-palette {
-    @apply bg-family-bg-light dark:bg-family-bg-dark
-           child:bg-child-bg-light child:dark:bg-child-bg-dark
-           parent:bg-parent-bg-light parent:dark:bg-parent-bg-dark;
-  }
+@utility bg-palette {
+  @apply bg-family-bg-light dark:bg-family-bg-dark
+    child:bg-child-bg-light child:dark:bg-child-bg-dark
+    parent:bg-parent-bg-light parent:dark:bg-parent-bg-dark;
+}
 
-  .bg-palette-90 {
-    @apply bg-family-bg-light/90 dark:bg-family-bg-dark/90
-           child:bg-child-bg-light/90 child:dark:bg-child-bg-dark/90
-           parent:bg-parent-bg-light/90 parent:dark:bg-parent-bg-dark/90;
-  }
+@utility bg-palette-90 {
+  @apply bg-family-bg-light/90 dark:bg-family-bg-dark/90
+    child:bg-child-bg-light/90 child:dark:bg-child-bg-dark/90
+    parent:bg-parent-bg-light/90 parent:dark:bg-parent-bg-dark/90;
+}
 
-  .text-palette {
-    @apply text-family-text-light dark:text-family-text-dark
-      child:text-child-text-light child:dark:text-child-text-dark
-      parent:text-parent-text-light parent:dark:text-parent-text-dark;
-  }
+@utility text-palette {
+  @apply text-family-text-light dark:text-family-text-dark
+    child:text-child-text-light child:dark:text-child-text-dark
+    parent:text-parent-text-light parent:dark:text-parent-text-dark;
 }

@@ -6,8 +6,8 @@
 
 @import "./theme.css";
 
+@import "./reusable.css"; /* Утилиты */
 @import "./elements.css";
-@import "./reusable.css";
 
 @import "./components/header.css";
 @import "./components/hero.css";

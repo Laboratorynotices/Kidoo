@@ -55,7 +55,6 @@
 
           &:hover {
             @apply border-2 text-palette
-
                 border-family-accent-light dark:border-family-accent-dark
                 child:border-child-accent-light dark:child:border-child-accent-dark
                 parent:border-parent-accent-light dark:parent:border-parent-accent-dark
