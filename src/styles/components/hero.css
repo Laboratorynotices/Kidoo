@@ -65,9 +65,7 @@
             p-4 pb-6
             my-auto sm:mx-auto md:mx-0
             child:sm:rounded-2xl sm:rounded-xl parent:sm:rounded-lg
-            bg-family-bg-light/90 dark:bg-family-bg-dark/90
-            child:bg-child-bg-light/90 dark:child:bg-child-bg-dark/90
-            parent:bg-parent-bg-light/90 dark:parent:bg-parent-bg-dark/90;
+            bg-palette-90;
 
           .title {
             @apply text-(length:--font-size-family-h1)
@@ -149,9 +147,7 @@
               @apply flex items-center justify-center
               w-fit cursor-pointer
               text-[1.2rem] font-medium
-              text-family-text-light dark:text-family-text-dark
-              child:text-child-text-light dark:child:text-child-text-dark
-              parent:text-parent-text-light dark:parent:text-parent-text-dark
+              text-palette
               whitespace-nowrap px-[15px] pt-[3px] pb-[7px]
               child:rounded-full rounded-xl parent:rounded-lg
               border-2 border-solid

@@ -2,24 +2,8 @@
 
 body {
   /* Задаём цвета фона и текста */
-  /* Вначале используем светлую тему */
-  @apply bg-family-bg-light
-  text-family-text-light
-  /* Затем добавляем тёмную тему для поддержки dark mode */
-  dark:bg-family-bg-dark
-  dark:text-family-text-dark
-  /* Детская палитра */
-  child:bg-child-bg-light
-  child:text-child-text-light
-  /* Затем добавляем тёмную тему для поддержки dark mode */
-  child:dark:bg-child-bg-dark
-  child:dark:text-child-text-dark
-  /* Родительская палитра */
-  parent:bg-parent-bg-light
-  parent:text-parent-text-light
-  /* Затем добавляем тёмную тему для поддержки dark mode */
-  parent:dark:bg-parent-bg-dark
-  parent:dark:text-parent-text-dark
+  /* Переиспользуемыми классами */
+  @apply bg-palette text-palette
   /* Анимация */
   transition-colors duration-300 ease-in-out;
 }
