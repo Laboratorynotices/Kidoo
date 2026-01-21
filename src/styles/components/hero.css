@@ -4,7 +4,7 @@
   overflow-hidden relative
   mt-[-80px];
 
-  & .carousel {
+  .carousel {
     /* Базовые стили для карточек .item —
     они абсолютные и располагаются поверх друг друга */
     .item {
@@ -51,7 +51,7 @@
         left: calc(67% + 600px);
       }
 
-      & .container {
+      .container {
         @apply hidden;
       }
 
@@ -59,7 +59,7 @@
         @apply flex flex-col
         h-full mx-auto;
 
-        & .content {
+        .content {
           @apply flex flex-col gap-4
             h-fit w-full sm:w-9/12 md:w-7/12 xl:w-8/12
             p-4 pb-6
@@ -69,25 +69,25 @@
             child:bg-child-bg-light/90 dark:child:bg-child-bg-dark/90
             parent:bg-parent-bg-light/90 dark:parent:bg-parent-bg-dark/90;
 
-          & .title {
-            @apply text-[length:var(--font-family-h1)]
-                sm:text-[length:var(--font-family-h1-sm)]
-                md:text-[length:var(--font-family-h1-md)]
-                lg:text-[length:var(--font-family-h1-lg)]
-                xl:text-[length:var(--font-family-h1-xl)]
-                2xl:text-[length:var(--font-family-h1-2xl)]
-                child:text-[length:var(--font-child-h1)]
-                child:sm:text-[length:var(--font-child-h1-sm)]
-                child:md:text-[length:var(--font-child-h1-md)]
-                child:lg:text-[length:var(--font-child-h1-lg)]
-                child:xl:text-[length:var(--font-child-h1-xl)]
-                child:2xl:text-[length:var(--font-child-h1-2xl)]
-                parent:text-[length:var(--font-parent-h1)]
-                parent:sm:text-[length:var(--font-parent-h1-sm)]
-                parent:md:text-[length:var(--font-parent-h1-md)]
-                parent:lg:text-[length:var(--font-parent-h1-lg)]
-                parent:xl:text-[length:var(--font-parent-h1-xl)]
-                parent:2xl:text-[length:var(--font-parent-h1-2xl)]
+          .title {
+            @apply text-(length:--font-size-family-h1)
+                sm:text-(length:--font-size-family-h1-sm)
+                md:text-(length:--font-size-family-h1-md)
+                lg:text-(length:--font-size-family-h1-lg)
+                xl:text-(length:--font-size-family-h1-xl)
+                2xl:text-(length:--font-size-family-h1-2xl)
+                child:text-(length:--font-size-child-h1)
+                child:sm:text-(length:--font-size-child-h1-sm)
+                child:md:text-(length:--font-size-child-h1-md)
+                child:lg:text-(length:--font-size-child-h1-lg)
+                child:xl:text-(length:--font-size-child-h1-xl)
+                child:2xl:text-(length:--font-size-child-h1-2xl)
+                parent:text-(length:--font-size-parent-h1)
+                parent:sm:text-(length:--font-size-parent-h1-sm)
+                parent:md:text-(length:--font-size-parent-h1-md)
+                parent:lg:text-(length:--font-size-parent-h1-lg)
+                parent:xl:text-(length:--font-size-parent-h1-xl)
+                parent:2xl:text-(length:--font-size-parent-h1-2xl)
                 uppercase
                 font-bold;
             /*
@@ -97,55 +97,55 @@
             animation: animate 1s ease-in-out 0.3s 1 forwards;
           }
 
-          & .name {
+          .name {
             @apply hidden parent:block
                 md:block
-                text-[length:var(--font-family-h2)]
-                sm:text-[length:var(--font-family-h2-sm)]
-                md:text-[length:var(--font-family-h2-md)]
-                lg:text-[length:var(--font-family-h2-lg)]
-                xl:text-[length:var(--font-family-h2-xl)]
-                2xl:text-[length:var(--font-family-h2-2xl)]
-                child:text-[length:var(--font-child-h2)]
-                child:sm:text-[length:var(--font-child-h2-sm)]
-                child:md:text-[length:var(--font-child-h2-md)]
-                child:lg:text-[length:var(--font-child-h2-lg)]
-                child:xl:text-[length:var(--font-child-h2-xl)]
-                child:2xl:text-[length:var(--font-child-h2-2xl)]
-                parent:text-[length:var(--font-parent-h2)]
-                parent:sm:text-[length:var(--font-parent-h2-sm)]
-                parent:md:text-[length:var(--font-parent-h2-md)]
-                parent:lg:text-[length:var(--font-parent-h2-lg)]
-                parent:xl:text-[length:var(--font-parent-h2-xl)]
-                parent:2xl:text-[length:var(--font-parent-h2-2xl)];
+                text-(length:--font-family-h2)
+                sm:text-(length:--font-family-h2-sm)
+                md:text-(length:--font-family-h2-md)
+                lg:text-(length:--font-family-h2-lg)
+                xl:text-(length:--font-family-h2-xl)
+                2xl:text-(length:--font-family-h2-2xl)
+                child:text-(length:--font-child-h2)
+                child:sm:text-(length:--font-child-h2-sm)
+                child:md:text-(length:--font-child-h2-md)
+                child:lg:text-(length:--font-child-h2-lg)
+                child:xl:text-(length:--font-child-h2-xl)
+                child:2xl:text-(length:--font-child-h2-2xl)
+                parent:text-(length:--font-parent-h2)
+                parent:sm:text-(length:--font-parent-h2-sm)
+                parent:md:text-(length:--font-parent-h2-md)
+                parent:lg:text-(length:--font-parent-h2-lg)
+                parent:xl:text-(length:--font-parent-h2-xl)
+                parent:2xl:text-(length:--font-parent-h2-2xl);
           }
 
-          & .description {
+          .description {
             @apply hidden lg:block
-                text-[length:var(--font-family-body)]
-                sm:text-[length:var(--font-family-body-sm)]
-                md:text-[length:var(--font-family-body-md)]
-                lg:text-[length:var(--font-family-body-lg)]
-                xl:text-[length:var(--font-family-body-xl)]
-                2xl:text-[length:var(--font-family-body-2xl)]
-                child:text-[length:var(--font-child-body)]
-                child:sm:text-[length:var(--font-child-body-sm)]
-                child:md:text-[length:var(--font-child-body-md)]
-                child:lg:text-[length:var(--font-child-body-lg)]
-                child:xl:text-[length:var(--font-child-body-xl)]
-                child:2xl:text-[length:var(--font-child-body-2xl)]
-                parent:text-[length:var(--font-parent-body)]
-                parent:sm:text-[length:var(--font-parent-body-sm)]
-                parent:md:text-[length:var(--font-parent-body-md)]
-                parent:lg:text-[length:var(--font-parent-body-lg)]
-                parent:xl:text-[length:var(--font-parent-body-xl)]
-                parent:2xl:text-[length:var(--font-parent-body-2xl)];
+                text-(length:--font-family-body)
+                sm:text-(length:--font-family-body-sm)
+                md:text-(length:--font-family-body-md)
+                lg:text-(length:--font-family-body-lg)
+                xl:text-(length:--font-family-body-xl)
+                2xl:text-(length:--font-family-body-2xl)
+                child:text-(length:--font-child-body)
+                child:sm:text-(length:--font-child-body-sm)
+                child:md:text-(length:--font-child-body-md)
+                child:lg:text-(length:--font-child-body-lg)
+                child:xl:text-(length:--font-child-body-xl)
+                child:2xl:text-(length:--font-child-body-2xl)
+                parent:text-(length:--font-parent-body)
+                parent:sm:text-(length:--font-parent-body-sm)
+                parent:md:text-(length:--font-parent-body-md)
+                parent:lg:text-(length:--font-parent-body-lg)
+                parent:xl:text-(length:--font-parent-body-xl)
+                parent:2xl:text-(length:--font-parent-body-2xl);
           }
 
-          & .buttoms {
+          .buttoms {
             @apply flex items-center gap-8;
 
-            & .btn {
+            .btn {
               @apply flex items-center justify-center
               w-fit cursor-pointer
               text-[1.2rem] font-medium
