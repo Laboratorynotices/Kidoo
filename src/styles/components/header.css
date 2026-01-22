@@ -68,7 +68,7 @@
     .navbar-toggle {
       @apply block lg:hidden
       cursor-pointer
-      p-2.5 border-none
+      p-2.5 m-6 border-none
       z-[var(--z-index-floating-button)]
       bg-transparent;
 

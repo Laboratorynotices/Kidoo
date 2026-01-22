@@ -7,7 +7,3 @@ body {
   /* Анимация */
   transition-colors duration-300 ease-in-out;
 }
-
-button {
-  @apply border m-6 px-3 py-2;
-}
