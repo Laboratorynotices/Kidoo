@@ -58,9 +58,7 @@
                 border-family-accent-light dark:border-family-accent-dark
                 child:border-child-accent-light dark:child:border-child-accent-dark
                 parent:border-parent-accent-light dark:parent:border-parent-accent-dark
-                bg-family-secondary-light dark:bg-family-secondary-dark
-                child:bg-child-secondary-light dark:child:bg-child-secondary-dark
-                parent:bg-parent-secondary-light dark:parent:bg-parent-secondary-dark;
+                bg-palette-secondary;
           }
         }
       }
@@ -150,9 +148,7 @@
               @apply border-family-accent-light dark:border-family-accent-dark
                 child:border-child-accent-light dark:child:border-child-accent-dark
                 parent:border-parent-accent-light dark:parent:border-parent-accent-dark
-                bg-family-secondary-light dark:bg-family-secondary-dark
-                child:bg-child-secondary-light dark:child:bg-child-secondary-dark
-                parent:bg-parent-secondary-light dark:parent:bg-parent-secondary-dark;
+                bg-palette-secondary;
             }
           }
         }

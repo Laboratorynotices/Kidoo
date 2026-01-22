@@ -15,8 +15,54 @@
     parent:bg-parent-bg-light/90 parent:dark:bg-parent-bg-dark/90;
 }
 
+@utility bg-palette-secondary {
+  @apply bg-family-secondary-light dark:bg-family-secondary-dark
+    child:bg-child-secondary-light child:dark:bg-child-secondary-dark
+    parent:bg-parent-secondary-light parent:dark:bg-parent-secondary-dark;
+}
+
 @utility text-palette {
   @apply text-family-text-light dark:text-family-text-dark
     child:text-child-text-light child:dark:text-child-text-dark
     parent:text-parent-text-light parent:dark:text-parent-text-dark;
+}
+
+@utility h1-style {
+  @apply text-(length:--font-size-family-h1)
+    leading-(--leading-family-h1)
+    sm:text-(length:--font-size-family-h1-sm)
+    sm:leading-(--leading-family-h1-sm)
+    md:text-(length:--font-size-family-h1-md)
+    md:leading-(--leading-family-h1-md)
+    lg:text-(length:--font-size-family-h1-lg)
+    lg:leading-(--leading-family-h1-lg)
+    xl:text-(length:--font-size-family-h1-xl)
+    xl:leading-(--leading-family-h1-xl)
+    2xl:text-(length:--font-size-family-h1-2xl)
+    2xl:leading-(--leading-family-h1-2xl)
+    child:text-(length:--font-size-child-h1)
+    child:leading-(--leading-child-h1)
+    child:sm:text-(length:--font-size-child-h1-sm)
+    child:sm:leading-(--leading-child-h1-sm)
+    child:md:text-(length:--font-size-child-h1-md)
+    child:md:leading-(--leading-child-h1-md)
+    child:lg:text-(length:--font-size-child-h1-lg)
+    child:lg:leading-(--leading-child-h1-lg)
+    child:xl:text-(length:--font-size-child-h1-xl)
+    child:xl:leading-(--leading-child-h1-xl)
+    child:2xl:text-(length:--font-size-child-h1-2xl)
+    child:2xl:leading-(--leading-child-h1-2xl)
+    parent:text-(length:--font-size-parent-h1)
+    parent:leading-(--leading-parent-h1)
+    parent:sm:text-(length:--font-size-parent-h1-sm)
+    parent:sm:leading-(--leading-parent-h1-sm)
+    parent:md:text-(length:--font-size-parent-h1-md)
+    parent:md:leading-(--leading-parent-h1-md)
+    parent:lg:text-(length:--font-size-parent-h1-lg)
+    parent:lg:leading-(--leading-parent-h1-lg)
+    parent:xl:text-(length:--font-size-parent-h1-xl)
+    parent:xl:leading-(--leading-parent-h1-xl)
+    parent:2xl:text-(length:--font-size-parent-h1-2xl)
+    parent:2xl:leading-(--leading-parent-h1-2xl)
+    font-bold;
 }
