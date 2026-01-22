@@ -45,7 +45,7 @@
             transition-all duration-[0.7s] ease-[ease]
             hover:scale-110
             hover:shadow-[var(--shadow-soft)]
-            child:rounded-full rounded-xl parent:rounded-lg
+            border-rounded-variants
             border-2 border-solid border-transparent;
 
           &.active {
@@ -54,11 +54,9 @@
           }
 
           &:hover {
-            @apply border-2 text-palette
-                border-family-accent-light dark:border-family-accent-dark
-                child:border-child-accent-light dark:child:border-child-accent-dark
-                parent:border-parent-accent-light dark:parent:border-parent-accent-dark
-                bg-palette-secondary;
+            @apply text-palette
+              border-2 border-palette-accent
+              bg-palette-secondary;
           }
         }
       }
@@ -138,17 +136,14 @@
             @apply text-[1.2rem] font-medium text-palette
             transition-colors duration-[0.7s] ease-[ease]
             whitespace-nowrap px-[15px] py-[3px]
-            child:rounded-full rounded-xl parent:rounded-lg
+            border-rounded-variants
             border-2 border-solid border-transparent
             md:text-[1.3rem] md:px-5 md:py-[3px]
             hover:shadow-[var(--shadow-soft)];
 
             &:hover,
             &.active {
-              @apply border-family-accent-light dark:border-family-accent-dark
-                child:border-child-accent-light dark:child:border-child-accent-dark
-                parent:border-parent-accent-light dark:parent:border-parent-accent-dark
-                bg-palette-secondary;
+              @apply border-palette-accent bg-palette-secondary;
             }
           }
         }

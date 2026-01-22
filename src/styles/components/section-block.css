@@ -1,19 +1,25 @@
 /* Универсальная секция */
-.section-block__header {
-  @apply flex flex-col items-center gap-4;
+.section-block {
+  .section-block__header {
+    @apply flex flex-col items-center gap-4;
 
-  .section-block__title {
-    @apply h1-style;
-  }
+    .section-block__title {
+      @apply h1-style;
+    }
 
-  .section-block__subtitle {
-    @apply order-first text-sm font-medium
+    .section-block__subtitle {
+      @apply order-first text-sm font-medium
       px-4 py-1.5
-      child:rounded-full rounded-xl parent:rounded-lg
+      border-rounded-variants
       bg-palette-secondary;
+    }
+
+    .section-block__description {
+      @apply max-w-[42rem] text-center;
+    }
   }
 
-  .section-block__description {
-    @apply max-w-[42rem] text-center text-lg;
+  .section-block__content {
+    @apply py-8;
   }
 }

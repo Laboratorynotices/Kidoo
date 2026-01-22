@@ -21,6 +21,16 @@
     parent:bg-parent-secondary-light parent:dark:bg-parent-secondary-dark;
 }
 
+@utility border-palette-accent {
+  @apply border-family-accent-light dark:border-family-accent-dark
+    child:border-child-accent-light dark:child:border-child-accent-dark
+    parent:border-parent-accent-light dark:parent:border-parent-accent-dark;
+}
+
+@utility border-rounded-variants {
+  @apply child:rounded-full rounded-xl parent:rounded-lg;
+}
+
 @utility text-palette {
   @apply text-family-text-light dark:text-family-text-dark
     child:text-child-text-light child:dark:text-child-text-dark
@@ -65,4 +75,82 @@
     parent:2xl:text-(length:--font-size-parent-h1-2xl)
     parent:2xl:leading-(--leading-parent-h1-2xl)
     font-bold;
+}
+
+@utility h2-style {
+  @apply text-(length:--font-size-family-h2)
+    leading-(--leading-family-h2)
+    sm:text-(length:--font-size-family-h2-sm)
+    sm:leading-(--leading-family-h2-sm)
+    md:text-(length:--font-size-family-h2-md)
+    md:leading-(--leading-family-h2-md)
+    lg:text-(length:--font-size-family-h2-lg)
+    lg:leading-(--leading-family-h2-lg)
+    xl:text-(length:--font-size-family-h2-xl)
+    xl:leading-(--leading-family-h2-xl)
+    2xl:text-(length:--font-size-family-h2-2xl)
+    2xl:leading-(--leading-family-h2-2xl)
+    child:text-(length:--font-size-child-h2)
+    child:leading-(--leading-child-h2)
+    child:sm:text-(length:--font-size-child-h2-sm)
+    child:sm:leading-(--leading-child-h2-sm)
+    child:md:text-(length:--font-size-child-h2-md)
+    child:md:leading-(--leading-child-h2-md)
+    child:lg:text-(length:--font-size-child-h2-lg)
+    child:lg:leading-(--leading-child-h2-lg)
+    child:xl:text-(length:--font-size-child-h2-xl)
+    child:xl:leading-(--leading-child-h2-xl)
+    child:2xl:text-(length:--font-size-child-h2-2xl)
+    child:2xl:leading-(--leading-child-h2-2xl)
+    parent:text-(length:--font-size-parent-h2)
+    parent:leading-(--leading-parent-h2)
+    parent:sm:text-(length:--font-size-parent-h2-sm)
+    parent:sm:leading-(--leading-parent-h2-sm)
+    parent:md:text-(length:--font-size-parent-h2-md)
+    parent:md:leading-(--leading-parent-h2-md)
+    parent:lg:text-(length:--font-size-parent-h2-lg)
+    parent:lg:leading-(--leading-parent-h2-lg)
+    parent:xl:text-(length:--font-size-parent-h2-xl)
+    parent:xl:leading-(--leading-parent-h2-xl)
+    parent:2xl:text-(length:--font-size-parent-h2-2xl)
+    parent:2xl:leading-(--leading-parent-h2-2xl);
+}
+
+@utility text-scale {
+  @apply text-(length:--font-size-family-body)
+    leading-(--leading-family-body)
+    sm:text-(length:--font-size-family-body-sm)
+    sm:leading-(--leading-family-body-sm)
+    md:text-(length:--font-size-family-body-md)
+    md:leading-(--leading-family-body-md)
+    lg:text-(length:--font-size-family-body-lg)
+    lg:leading-(--leading-family-body-lg)
+    xl:text-(length:--font-size-family-body-xl)
+    xl:leading-(--leading-family-body-xl)
+    2xl:text-(length:--font-size-family-body-2xl)
+    2xl:leading-(--leading-family-body-2xl)
+    child:text-(length:--font-size-child-body)
+    child:leading-(--leading-child-body)
+    child:sm:text-(length:--font-size-child-body-sm)
+    child:sm:leading-(--leading-child-body-sm)
+    child:md:text-(length:--font-size-child-body-md)
+    child:md:leading-(--leading-child-body-md)
+    child:lg:text-(length:--font-size-child-body-lg)
+    child:lg:leading-(--leading-child-body-lg)
+    child:xl:text-(length:--font-size-child-body-xl)
+    child:xl:leading-(--leading-child-body-xl)
+    child:2xl:text-(length:--font-size-child-body-2xl)
+    child:2xl:leading-(--leading-child-body-2xl)
+    parent:text-(length:--font-size-parent-body)
+    parent:leading-(--leading-parent-body)
+    parent:sm:text-(length:--font-size-parent-body-sm)
+    parent:sm:leading-(--leading-parent-body-sm)
+    parent:md:text-(length:--font-size-parent-body-md)
+    parent:md:leading-(--leading-parent-body-md)
+    parent:lg:text-(length:--font-size-parent-body-lg)
+    parent:lg:leading-(--leading-parent-body-lg)
+    parent:xl:text-(length:--font-size-parent-body-xl)
+    parent:xl:leading-(--leading-parent-body-xl)
+    parent:2xl:text-(length:--font-size-parent-body-2xl)
+    parent:2xl:leading-(--leading-parent-body-2xl);
 }

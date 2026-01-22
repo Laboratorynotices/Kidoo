@@ -13,7 +13,7 @@
         w-[180px] h-[250px]
         left-[70%] top-[80%]
         shadow-[var(--shadow-default)]
-        child:rounded-full rounded-xl parent:rounded-lg
+        border-rounded-variants
         bg-[50%_50%] bg-cover
         transform -translate-y-[70%];
 
@@ -64,30 +64,13 @@
             h-fit w-full sm:w-9/12 md:w-7/12 xl:w-8/12
             p-4 pb-6
             my-auto sm:mx-auto md:mx-0
-            child:sm:rounded-2xl sm:rounded-xl parent:sm:rounded-lg
+            border-rounded-variants
+            rounded-none child:sm:rounded-2xl
             bg-palette-90;
 
           .title {
-            @apply text-(length:--font-size-family-h1)
-                sm:text-(length:--font-size-family-h1-sm)
-                md:text-(length:--font-size-family-h1-md)
-                lg:text-(length:--font-size-family-h1-lg)
-                xl:text-(length:--font-size-family-h1-xl)
-                2xl:text-(length:--font-size-family-h1-2xl)
-                child:text-(length:--font-size-child-h1)
-                child:sm:text-(length:--font-size-child-h1-sm)
-                child:md:text-(length:--font-size-child-h1-md)
-                child:lg:text-(length:--font-size-child-h1-lg)
-                child:xl:text-(length:--font-size-child-h1-xl)
-                child:2xl:text-(length:--font-size-child-h1-2xl)
-                parent:text-(length:--font-size-parent-h1)
-                parent:sm:text-(length:--font-size-parent-h1-sm)
-                parent:md:text-(length:--font-size-parent-h1-md)
-                parent:lg:text-(length:--font-size-parent-h1-lg)
-                parent:xl:text-(length:--font-size-parent-h1-xl)
-                parent:2xl:text-(length:--font-size-parent-h1-2xl)
-                uppercase
-                font-bold;
+            @apply h1-style
+              uppercase;
             /*
             w-full md:w-2/3
             opacity: 0;
@@ -97,47 +80,12 @@
 
           .name {
             @apply hidden parent:block
-                md:block
-                text-(length:--font-family-h2)
-                sm:text-(length:--font-family-h2-sm)
-                md:text-(length:--font-family-h2-md)
-                lg:text-(length:--font-family-h2-lg)
-                xl:text-(length:--font-family-h2-xl)
-                2xl:text-(length:--font-family-h2-2xl)
-                child:text-(length:--font-child-h2)
-                child:sm:text-(length:--font-child-h2-sm)
-                child:md:text-(length:--font-child-h2-md)
-                child:lg:text-(length:--font-child-h2-lg)
-                child:xl:text-(length:--font-child-h2-xl)
-                child:2xl:text-(length:--font-child-h2-2xl)
-                parent:text-(length:--font-parent-h2)
-                parent:sm:text-(length:--font-parent-h2-sm)
-                parent:md:text-(length:--font-parent-h2-md)
-                parent:lg:text-(length:--font-parent-h2-lg)
-                parent:xl:text-(length:--font-parent-h2-xl)
-                parent:2xl:text-(length:--font-parent-h2-2xl);
+              md:block h2-style;
           }
 
           .description {
             @apply hidden lg:block
-                text-(length:--font-family-body)
-                sm:text-(length:--font-family-body-sm)
-                md:text-(length:--font-family-body-md)
-                lg:text-(length:--font-family-body-lg)
-                xl:text-(length:--font-family-body-xl)
-                2xl:text-(length:--font-family-body-2xl)
-                child:text-(length:--font-child-body)
-                child:sm:text-(length:--font-child-body-sm)
-                child:md:text-(length:--font-child-body-md)
-                child:lg:text-(length:--font-child-body-lg)
-                child:xl:text-(length:--font-child-body-xl)
-                child:2xl:text-(length:--font-child-body-2xl)
-                parent:text-(length:--font-parent-body)
-                parent:sm:text-(length:--font-parent-body-sm)
-                parent:md:text-(length:--font-parent-body-md)
-                parent:lg:text-(length:--font-parent-body-lg)
-                parent:xl:text-(length:--font-parent-body-xl)
-                parent:2xl:text-(length:--font-parent-body-2xl);
+              text-scale;
           }
 
           .buttoms {
@@ -149,11 +97,8 @@
               text-[1.2rem] font-medium
               text-palette
               whitespace-nowrap px-[15px] pt-[3px] pb-[7px]
-              child:rounded-full rounded-xl parent:rounded-lg
               border-2 border-solid
-              border-family-accent-light dark:border-family-accent-dark
-              child:border-child-accent-light dark:child:border-child-accent-dark
-              parent:border-parent-accent-light dark:parent:border-parent-accent-dark
+              border-rounded-variants border-palette-accent
               bg-palette-secondary
               transition-transform duration-[0.7s] ease-[ease]
               hover:scale-110

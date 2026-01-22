@@ -3,7 +3,8 @@
 body {
   /* Задаём цвета фона и текста */
   /* Переиспользуемыми классами */
-  @apply bg-palette text-palette
+  @apply bg-palette
+  text-palette text-scale
   /* Анимация */
   transition-colors duration-300 ease-in-out;
 }
