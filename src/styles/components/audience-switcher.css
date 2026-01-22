@@ -1,0 +1,17 @@
+.audience-switcher {
+  @apply py-16;
+
+  .audience-switcher__list {
+    @apply flex justify-evenly
+      flex-col sm:flex-row
+      gap-2;
+
+    .audience-switcher__item {
+      @apply border-2 border-solid
+        border-palette-accent
+        bg-palette-secondary
+        border-rounded-variants
+        px-4 py-1.5 text-center;
+    }
+  }
+}

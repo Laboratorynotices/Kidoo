@@ -4,10 +4,9 @@
   "russian": "Русский",
   "german": "Немецкий",
   "switch to en": "Переключиться на английский",
-  "introduce yourself": "Представьтесь",
   "child": "Дети",
   "family": "Семья",
-  "parents": "Родители",
+  "parent": "Родители",
   "aria.nav.toTop": "Наверх страницы",
   "aria.nav.openMenu": "Открыть меню навигации",
   "aria.nav.closeMenu": "Закрыть меню навигации",
@@ -16,5 +15,10 @@
   "header.switcher.childMode": "Режим ребенка",
   "header.switcher.parentMode": "Режим родителя",
   "header.switcher.childIconAlt": "Иконка ребенка",
-  "header.switcher.parentIconAlt": "Иконка родителя"
+  "header.switcher.parentIconAlt": "Иконка родителя",
+  "introduceYourself": {
+    "title": "Представьтесь",
+    "subtitle": "Кто вы сегодня на сайте?",
+    "description": "Выберите роль, чтобы мы показали информацию, которая будет полезна именно вам: для детей, для родителей или для всей семьи."
+  }
 }

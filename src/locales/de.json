@@ -4,10 +4,9 @@
   "russian": "Russisch",
   "german": "Deutsch",
   "switch to ru": "Auf Russisch umschalten",
-  "introduce yourself": "Stellen Sie sich vor",
   "child": "Kinder",
   "family": "Familie",
-  "parents": "Eltern",
+  "parent": "Eltern",
   "aria.nav.toTop": "Zum Seitenanfang",
   "aria.nav.openMenu": "Navigationsmenü öffnen",
   "aria.nav.closeMenu": "Navigationsmenü schließen",
@@ -16,5 +15,10 @@
   "header.switcher.childMode": "Kindmodus",
   "header.switcher.parentMode": "Elternmodus",
   "header.switcher.childIconAlt": "Kind-Symbol",
-  "header.switcher.parentIconAlt": "Eltern-Symbol"
+  "header.switcher.parentIconAlt": "Eltern-Symbol",
+  "introduceYourself": {
+    "title": "Stellen Sie sich vor",
+    "subtitle": "Wer sind Sie heute auf unserer Seite?",
+    "description": "Wählen Sie Ihre Rolle, damit wir Ihnen die Inhalte anzeigen können, die für Sie am relevantesten sind – für Kinder, für Eltern oder für die ganze Familie."
+  }
 }

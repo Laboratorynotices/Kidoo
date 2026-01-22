@@ -4,10 +4,9 @@
   "russian": "Russian",
   "german": "German",
   "switch to de": "Switch to German",
-  "introduce yourself": "Introduce yourself",
   "child": "Сhild",
   "family": "Family",
-  "parents": "Parents",
+  "parent": "Parents",
   "aria.nav.toTop": "To top of page",
   "aria.nav.openMenu": "Open navigation menu",
   "aria.nav.closeMenu": "Close navigation menu",
@@ -16,5 +15,10 @@
   "header.switcher.childMode": "Child mode",
   "header.switcher.parentMode": "Parent mode",
   "header.switcher.childIconAlt": "Child icon",
-  "header.switcher.parentIconAlt": "Parent icon"
+  "header.switcher.parentIconAlt": "Parent icon",
+  "introduceYourself": {
+    "title": "Introduce yourself",
+    "subtitle": "Who are you here for today?",
+    "description": "Choose your role so we can show you the information that matters most to you — for kids, for parents, or for the whole family."
+  }
 }

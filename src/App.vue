@@ -2,12 +2,11 @@
 import { onMounted } from "vue";
 import { useTheme } from "@/composables/useTheme";
 import { useLayout } from "@/composables/layout";
-import type { BodyMode } from "@/types/theme";
 
 import HeaderApp from "@/components/header/HeaderApp.vue";
 
 // Получаем методы для работы с темами из композабла
-const { currentTheme, setTheme, initTheme } = useTheme();
+const { currentTheme, initTheme } = useTheme();
 
 // Получаем методы для работы с динамическим layout
 const {
@@ -29,14 +28,6 @@ onMounted(async () => {
   // Загружаем конфигурацию компонентов для текущей темы
   await fetchConfigs(currentTheme.value);
 });
-
-/**
- * Обработчик смены темы
- */
-const handleThemeChange = async (theme: BodyMode) => {
-  setTheme(theme);
-  await fetchConfigs(theme);
-};
 </script>
 
 <template>
@@ -51,11 +42,4 @@ const handleThemeChange = async (theme: BodyMode) => {
     :is="resolveComponent(section.name)"
     v-bind="section.props"
   />
-
-  <div>
-    <p>{{ $t("introduce yourself") }}</p>
-    <button @click="handleThemeChange('child')">{{ $t("child") }}</button>
-    <button @click="handleThemeChange('family')">{{ $t("family") }}</button>
-    <button @click="handleThemeChange('parent')">{{ $t("parents") }}</button>
-  </div>
 </template>
