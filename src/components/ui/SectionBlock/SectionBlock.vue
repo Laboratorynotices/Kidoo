@@ -5,17 +5,27 @@ import SectionBlockDescription from "./SectionBlockDescription.vue";
 const props = defineProps<{
   id?: string;
   class?: string;
+  titleId?: string;
+  subtitleId?: string;
 }>();
 </script>
 
 <template>
   <section :id="id" :class="['section-block', props.class]">
     <header class="section-block__header">
-      <SectionBlockHeading level="h2" class="section-block__title">
+      <SectionBlockHeading
+        :id="titleId"
+        level="h2"
+        class="section-block__title"
+      >
         <slot name="title" />
       </SectionBlockHeading>
 
-      <SectionBlockHeading level="h3" class="section-block__subtitle">
+      <SectionBlockHeading
+        :id="subtitleId"
+        level="h3"
+        class="section-block__subtitle"
+      >
         <slot name="subtitle" />
       </SectionBlockHeading>
 
