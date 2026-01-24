@@ -4,14 +4,15 @@
   .audience-switcher__list {
     @apply flex justify-evenly
       flex-col sm:flex-row
-      gap-2;
+      gap-y-2 gap-x-8 w-full;
 
     .audience-switcher__item {
       @apply border-2 border-solid
         border-palette-accent
         bg-palette-secondary
         border-rounded-variants
-        px-4 py-1.5 text-center;
+        px-4 py-1.5 text-center
+        flex-1 w-full sm:w-auto;
     }
   }
 }

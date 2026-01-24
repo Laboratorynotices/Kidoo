@@ -1,0 +1,27 @@
+.ui-alert {
+  @apply rounded-lg border p-4;
+
+  &.ui-alert--error {
+    @apply border-red-300 bg-red-50 text-red-800;
+  }
+
+  &.ui-alert--warning {
+    @apply border-yellow-300 bg-yellow-50 text-yellow-800;
+  }
+
+  &.ui-alert--info {
+    @apply border-blue-300 bg-blue-50 text-blue-800;
+  }
+
+  &.ui-alert--success {
+    @apply border-green-300 bg-green-50 text-green-800;
+  }
+
+  .ui-alert__title {
+    @apply font-medium;
+  }
+
+  .ui-alert__message {
+    @apply mt-1 text-sm;
+  }
+}

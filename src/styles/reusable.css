@@ -27,6 +27,12 @@
     parent:border-parent-accent-light dark:parent:border-parent-accent-dark;
 }
 
+@utility bg-palette-text-50 {
+  @apply bg-family-text-light/50 dark:bg-family-text-dark/50
+    child:bg-child-text-light/50 child:dark:bg-child-text-dark/50
+    parent:bg-parent-text-light/50 parent:dark:bg-parent-text-dark/50;
+}
+
 @utility border-rounded-variants {
   @apply child:rounded-full rounded-xl parent:rounded-lg;
 }

@@ -15,10 +15,5 @@
   "header.switcher.childMode": "Режим ребенка",
   "header.switcher.parentMode": "Режим родителя",
   "header.switcher.childIconAlt": "Иконка ребенка",
-  "header.switcher.parentIconAlt": "Иконка родителя",
-  "introduceYourself": {
-    "title": "Представьтесь",
-    "subtitle": "Кто вы сегодня на сайте?",
-    "description": "Выберите роль, чтобы мы показали информацию, которая будет полезна именно вам: для детей, для родителей или для всей семьи."
-  }
+  "header.switcher.parentIconAlt": "Иконка родителя"
 }

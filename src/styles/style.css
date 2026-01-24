@@ -12,6 +12,9 @@
 /* Скелетон */
 @import "./skeleton.css";
 
+/* Сообщения */
+@import "./components/ui-alert.css";
+
 @import "./components/header.css";
 @import "./components/hero.css";
 @import "./components/section-block.css";

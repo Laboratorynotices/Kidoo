@@ -26,6 +26,16 @@ export type AvailableLocale = (typeof SUPPORT_LOCALES)[number];
 export const DEFAULT_LOCALE: AvailableLocale = "de";
 
 /**
+ * Проверяет, является ли переданная строка валидным кодом языка
+ *
+ * @param code - строка для проверки
+ * @returns true, если code является одним из SUPPORT_LOCALES
+ */
+export const isValidLocale = (code: string): code is AvailableLocale => {
+  return SUPPORT_LOCALES.includes(code as AvailableLocale);
+};
+
+/**
  * Создание экземпляра Vue I18n для интернационализации
  *
  * Конфигурация:
