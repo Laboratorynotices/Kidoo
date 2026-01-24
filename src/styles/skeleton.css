@@ -1,0 +1,22 @@
+/*********************************/
+/************ Скелетон ***********/
+/*********************************/
+
+.skeleton-line {
+  @apply inline-block border-rounded-variants
+    h-[1em] w-48 animate-pulse
+    bg-palette-text-50;
+}
+
+.skeleton-lines {
+  @apply flex flex-col w-full
+  gap-2 items-center;
+
+  .skeleton-line {
+    @apply w-full;
+
+    &:last-child {
+      @apply w-3/4;
+    }
+  }
+}
