@@ -65,7 +65,7 @@
             p-4 pb-6
             my-auto sm:mx-auto md:mx-0
             border-rounded-variants
-            rounded-none child:sm:rounded-2xl
+            child:rounded-none child:sm:rounded-2xl
             bg-palette-90;
 
           .title {
