@@ -14,6 +14,10 @@
         px-4 py-1.5 text-center
         flex-1 w-full sm:w-auto
         cursor-pointer;
+
+      .audience-switcher__button {
+        @apply cursor-[inherit];
+      }
     }
   }
 }
