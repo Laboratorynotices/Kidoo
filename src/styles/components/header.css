@@ -30,9 +30,7 @@
           w-8
           m-0 p-0 border-none
           cursor-pointer
-          transition-all duration-[0.3s] ease-[ease-in-out]
-          hover:shadow-[var(--shadow-soft)]
-          hover:scale-110;
+          ui-hover;
       }
 
       .palette_switcher {
@@ -42,9 +40,7 @@
           @apply w-8 h-8
             /* Заменяем цвета для неактивной иконки */
             opacity-33
-            transition-all duration-[0.7s] ease-[ease]
-            hover:scale-110
-            hover:shadow-[var(--shadow-soft)]
+            ui-hover
             border-rounded-variants
             border-2 border-solid border-transparent;
 
@@ -129,8 +125,7 @@
           lg:p-0;
 
         li {
-          @apply transition-transform duration-[0.7s] ease-[ease]
-          hover:scale-110;
+          @apply ui-hover;
 
           a {
             @apply text-[1.2rem] font-medium text-palette
@@ -138,8 +133,7 @@
             whitespace-nowrap px-[15px] py-[3px]
             border-rounded-variants
             border-2 border-solid border-transparent
-            md:text-[1.3rem] md:px-5 md:py-[3px]
-            hover:shadow-[var(--shadow-soft)];
+            md:text-[1.3rem] md:px-5 md:py-[3px];
 
             &:hover,
             &.active {

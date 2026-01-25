@@ -22,4 +22,9 @@
   .section-block__content {
     @apply py-8;
   }
+
+  /* Элементы, у которых нет дочерних элементов */
+  *:not(:has(*)) {
+    @apply fadeInUp;
+  }
 }

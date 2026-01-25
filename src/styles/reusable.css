@@ -160,3 +160,42 @@
     parent:2xl:text-(length:--font-size-parent-body-2xl)
     parent:2xl:leading-(--leading-parent-body-2xl);
 }
+
+/* ============
+  Блок анимации
+=============== */
+@utility ui-hover {
+  @apply transition-transform duration-[0.7s] ease-[ease];
+
+  &:hover {
+    @apply scale-110 shadow-[var(--shadow-soft)];
+  }
+}
+
+@utility fadeInUp {
+  --hover-scale: 1;
+  --enter-scale: 1;
+  --enter-y: 0;
+
+  transform: translateY(var(--enter-y))
+    scale(calc(var(--enter-scale) * var(--hover-scale)));
+
+  animation: fadeInUpAnimation both;
+  animation-timeline: view();
+  animation-range: contain 0% contain 10%;
+}
+
+@keyframes fadeInUpAnimation {
+  from {
+    --enter-scale: 0.75;
+    --enter-y: 1.25rem;
+    filter: blur(20px);
+    opacity: 0;
+  }
+  to {
+    --enter-scale: 1;
+    --enter-y: 0;
+    filter: blur(0);
+    opacity: 1;
+  }
+}

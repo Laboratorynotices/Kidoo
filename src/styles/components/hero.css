@@ -100,9 +100,7 @@
               border-2 border-solid
               border-rounded-variants border-palette-accent
               bg-palette-secondary
-              transition-transform duration-[0.7s] ease-[ease]
-              hover:scale-110
-              hover:shadow-[var(--shadow-soft)];
+              ui-hover;
             }
           }
         }
