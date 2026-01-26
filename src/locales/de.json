@@ -15,5 +15,8 @@
   "header.switcher.childMode": "Kindmodus",
   "header.switcher.parentMode": "Elternmodus",
   "header.switcher.childIconAlt": "Kind-Symbol",
-  "header.switcher.parentIconAlt": "Eltern-Symbol"
+  "header.switcher.parentIconAlt": "Eltern-Symbol",
+  "errors": {
+    "contentLoadFailed": "Inhalt konnte nicht geladen werden"
+  }
 }

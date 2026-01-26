@@ -33,7 +33,7 @@ onMounted(async () => {
   <div class="container">
     <!-- Сообщение об ошибке -->
     <UiAlert v-if="loadError" variant="error">
-      <template #title>Failed to load content</template>
+      <template #title>{{ $t("errors.contentLoadFailed") }}</template>
       <template>
         <p>{{ loadError }}</p>
       </template>

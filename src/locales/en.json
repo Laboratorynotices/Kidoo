@@ -15,5 +15,8 @@
   "header.switcher.childMode": "Child mode",
   "header.switcher.parentMode": "Parent mode",
   "header.switcher.childIconAlt": "Child icon",
-  "header.switcher.parentIconAlt": "Parent icon"
+  "header.switcher.parentIconAlt": "Parent icon",
+  "errors": {
+    "contentLoadFailed": "Failed to load content"
+  }
 }
