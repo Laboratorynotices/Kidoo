@@ -27,11 +27,12 @@
 
 ## Доступные эндпоинты
 
-| Эндпоинт                          | Описание                   | Документация                                          |
-| --------------------------------- | -------------------------- | ----------------------------------------------------- |
-| `/api/v1/seo/{lang}.json`         | SEO метаданные для страниц | [SEO Documentation](endpoints/seo.md)                 |
-| `/api/v1/menu/{lang}.json`        | Навигационное меню сайта   | [Menu Documentation](endpoints/menu.md)               |
-| `/api/v1/hero-slides/{lang}.json` | Слайды для секции Hero     | [Hero Slides Documentation](endpoints/hero-slides.md) |
+| Эндпоинт                                | Описание                     | Документация                                                      |
+| --------------------------------------- | ---------------------------- | ----------------------------------------------------------------- |
+| `/api/v1/seo/{lang}.json`               | SEO метаданные для страниц   | [SEO Documentation](endpoints/seo.md)                             |
+| `/api/v1/menu/{lang}.json`              | Навигационное меню сайта     | [Menu Documentation](endpoints/menu.md)                           |
+| `/api/v1/hero-slides/{lang}.json`       | Слайды для секции Hero       | [Hero Slides Documentation](endpoints/hero-slides.md)             |
+| `/api/v1/audience-switcher/{lang}.json` | Выбор аудитории пользователя | [Audience Switcher Documentation](endpoints/audience-switcher.md) |
 
 ## Общие поля ответа
 
@@ -105,4 +106,4 @@ public/api/v1/
 
 ---
 
-_Последнее обновление: 24.09.2025_
+_Последнее обновление: 26.01.2026_
