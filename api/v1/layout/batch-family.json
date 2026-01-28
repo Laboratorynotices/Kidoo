@@ -1,0 +1,10 @@
+{
+  "HeroSection": {
+    "order": 1,
+    "visible": true
+  },
+  "AudienceSwitcher": {
+    "order": 2,
+    "visible": true
+  }
+}
