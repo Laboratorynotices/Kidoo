@@ -1,6 +1,4 @@
 .audience-switcher {
-  @apply py-16;
-
   .audience-switcher__list {
     @apply flex justify-evenly
       flex-col sm:flex-row

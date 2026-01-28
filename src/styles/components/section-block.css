@@ -1,7 +1,10 @@
 /* Универсальная секция */
 .section-block {
+  @apply pt-16;
+
   .section-block__header {
-    @apply flex flex-col items-center gap-4;
+    @apply flex flex-col gap-4
+      items-center text-center;
 
     .section-block__title {
       @apply h1-style;
@@ -26,5 +29,9 @@
   /* Элементы, у которых нет дочерних элементов */
   *:not(:has(*)) {
     @apply fadeInUp;
+  }
+
+  &:last-child {
+    @apply pb-16;
   }
 }
