@@ -33,6 +33,7 @@
 | `/api/v1/menu/{lang}.json`              | Навигационное меню сайта     | [Menu Documentation](endpoints/menu.md)                           |
 | `/api/v1/hero-slides/{lang}.json`       | Слайды для секции Hero       | [Hero Slides Documentation](endpoints/hero-slides.md)             |
 | `/api/v1/audience-switcher/{lang}.json` | Выбор аудитории пользователя | [Audience Switcher Documentation](endpoints/audience-switcher.md) |
+| `/api/v1/sports-explorer/{lang}.json`   | Предлагаемые виды спорта     | [Sports Explorer Documentation](endpoints/sports-explorer.md)     |
 
 ## Общие поля ответа
 
