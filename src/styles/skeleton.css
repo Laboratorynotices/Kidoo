@@ -6,7 +6,7 @@
   @apply inline-block border-rounded-variants
     h-[1em] animate-pulse
     bg-palette-text-50
-    w-[calc(var(--skeletonLineWidth, 32)ch)];
+    w-(--skeletonLineWidth);
 }
 
 .skeleton-lines {
