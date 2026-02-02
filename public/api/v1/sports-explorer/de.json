@@ -1,0 +1,26 @@
+{
+  "language": "de",
+  "sportsExplorer": {
+    "icon": "🎯",
+    "title": "Welche Sportarten probierst du aus?",
+    "description": "Rennen, springen, rollen und Neues entdecken. Jedes Mal wartet ein neues Abenteuer auf dich! ✨",
+    "sports": [
+      { "emoji": "🚴", "name": "Fahrrad", "funFact": "Wie der Wind!" },
+      { "emoji": "🛼", "name": "Rollschuhe", "funFact": "Coole Tricks!" },
+      { "emoji": "⚽", "name": "Fußball", "funFact": "Tooor!" },
+      { "emoji": "🏊", "name": "Schwimmen", "funFact": "Platsch!" },
+      { "emoji": "⛷️", "name": "Ski", "funFact": "Ab die Post!" },
+      { "emoji": "⛸️", "name": "Schlittschuh", "funFact": "Pirouette!" },
+      { "emoji": "🧗", "name": "Klettern", "funFact": "Ganz hoch!" },
+      { "emoji": "🏀", "name": "Basketball", "funFact": "Korb!" },
+      { "emoji": "🤸", "name": "Turnen", "funFact": "Salto!" },
+      { "emoji": "🛷", "name": "Rodeln", "funFact": "Hui!" },
+      { "emoji": "🎾", "name": "Tennis", "funFact": "Ass!" },
+      { "emoji": "💃", "name": "Tanzen", "funFact": "Groovy!" }
+    ],
+    "closing": {
+      "text": "🌟 Mit Kidoo kannst du alles ausprobieren!",
+      "icons": ["🎉", "🏆", "⭐"]
+    }
+  }
+}

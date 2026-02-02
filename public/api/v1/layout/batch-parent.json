@@ -6,5 +6,9 @@
   "AudienceSwitcher": {
     "order": 2,
     "visible": true
+  },
+  "SportsExplorer": {
+    "order": 3,
+    "visible": false
   }
 }

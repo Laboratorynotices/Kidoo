@@ -1,0 +1,26 @@
+{
+  "language": "en",
+  "sportsExplorer": {
+    "icon": "🎯",
+    "title": "Which sports will you try?",
+    "description": "Run, jump, roll and discover new superpowers. Every time brings a new adventure! ✨",
+    "sports": [
+      { "emoji": "🚴", "name": "Cycling", "funFact": "Like the wind!" },
+      { "emoji": "🛼", "name": "Roller Skating", "funFact": "Cool tricks!" },
+      { "emoji": "⚽", "name": "Football", "funFact": "Gooal!" },
+      { "emoji": "🏊", "name": "Swimming", "funFact": "Splash!" },
+      { "emoji": "⛷️", "name": "Skiing", "funFact": "Let’s go!" },
+      { "emoji": "⛸️", "name": "Ice Skating", "funFact": "Spin!" },
+      { "emoji": "🧗", "name": "Climbing", "funFact": "So high!" },
+      { "emoji": "🏀", "name": "Basketball", "funFact": "Swish!" },
+      { "emoji": "🤸", "name": "Gymnastics", "funFact": "Flip!" },
+      { "emoji": "🛷", "name": "Sledding", "funFact": "Wheee!" },
+      { "emoji": "🎾", "name": "Tennis", "funFact": "Ace!" },
+      { "emoji": "💃", "name": "Dancing", "funFact": "Groove!" }
+    ],
+    "closing": {
+      "text": "🌟 With Kidoo, you can try everything!",
+      "icons": ["🎉", "🏆", "⭐"]
+    }
+  }
+}
