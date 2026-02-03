@@ -10,10 +10,7 @@ defineProps<Props>();
 </script>
 
 <template>
-  <li
-    class="sports-explorer__item sports-explorer__item--card"
-    :title="sport.funFact"
-  >
+  <li class="sports-explorer__item" :title="sport.funFact">
     <div class="sports-explorer__emoji" aria-hidden="true">
       {{ sport.emoji }}
     </div>
