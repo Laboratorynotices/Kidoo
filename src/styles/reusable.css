@@ -9,6 +9,12 @@
     parent:bg-parent-bg-light parent:dark:bg-parent-bg-dark;
 }
 
+@utility bg-palette-inverted {
+  @apply bg-family-bg-dark dark:bg-family-bg-light
+    child:bg-child-bg-dark child:dark:bg-child-bg-light
+    parent:bg-parent-bg-dark parent:dark:bg-parent-bg-light;
+}
+
 @utility bg-palette-90 {
   @apply bg-family-bg-light/90 dark:bg-family-bg-dark/90
     child:bg-child-bg-light/90 child:dark:bg-child-bg-dark/90
@@ -41,6 +47,12 @@
   @apply text-family-text-light dark:text-family-text-dark
     child:text-child-text-light child:dark:text-child-text-dark
     parent:text-parent-text-light parent:dark:text-parent-text-dark;
+}
+
+@utility text-palette-inverted {
+  @apply text-family-text-dark dark:text-family-text-light
+    child:text-child-text-dark child:dark:text-child-text-light
+    parent:text-parent-text-dark parent:dark:text-parent-text-light;
 }
 
 @utility h1-style {
