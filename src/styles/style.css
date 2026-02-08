@@ -15,6 +15,9 @@
 /* Сообщения */
 @import "./components/ui-alert.css";
 
+/* Подсказки (тултипы) */
+@import "./components/tooltip.css";
+
 @import "./components/header.css";
 @import "./components/hero.css";
 @import "./components/section-block.css";
