@@ -10,6 +10,12 @@ body {
 }
 
 /* TODO: Перенести куда-нибудь, тут только HTML-элементы!!! */
+
+/* Убрать рамку фокуса для всех элементов */
+*:focus {
+  @apply outline-none;
+}
+
 .container {
   @apply mx-auto;
 }
