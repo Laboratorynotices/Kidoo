@@ -4,8 +4,10 @@
 }
 
 .tooltip__content {
-  @apply bg-palette-inverted text-palette-inverted
-    text-scale border-palette-accent border-rounded-variants
+  @apply bg-palette-inverted
+    text-scale text-palette-inverted
+    border-palette-accent
+    border-rounded-variants
     absolute hidden z-1
     text-center
     m-2 px-3 py-2;
