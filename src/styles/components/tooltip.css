@@ -1,0 +1,20 @@
+.tooltip {
+  @apply cursor-help;
+  anchor-name: --tooltip-anchor;
+}
+
+.tooltip__content {
+  @apply bg-palette-inverted text-palette-inverted
+    text-scale border-palette-accent border-rounded-variants
+    absolute hidden z-1
+    text-center
+    m-2 px-3 py-2;
+  position-anchor: --tooltip-anchor;
+  position-area: top;
+  position-try-fallbacks: flip-block, flip-inline;
+}
+
+.tooltip:hover .tooltip__content,
+.tooltip:focus-within .tooltip__content {
+  @apply block;
+}
