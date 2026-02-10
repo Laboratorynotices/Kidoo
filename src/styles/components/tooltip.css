@@ -14,6 +14,20 @@
   position-anchor: --tooltip-anchor;
   position-area: top;
   position-try-fallbacks: flip-block, flip-inline;
+
+  &::after {
+    @apply content-[""]
+    w-0 h-0 absolute
+    left-2/4 -bottom-2
+    -translate-x-2/4
+    border-t-[color:var(--color-family-bg-dark)]
+    dark:border-t-[color:var(--color-family-bg-light)]
+    child:border-t-[color:var(--color-child-bg-dark)]
+    child:dark:border-t-[color:var(--color-child-bg-light)]
+    parent:border-t-[color:var(--color-parent-bg-dark)]
+    parent:dark:border-t-[color:var(--color-parent-bg-light)]
+    border-t-8 border-x-8 border-x-transparent border-solid;
+  }
 }
 
 .tooltip:hover .tooltip__content,
