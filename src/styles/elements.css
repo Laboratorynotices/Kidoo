@@ -12,8 +12,13 @@ body {
 /* TODO: Перенести куда-нибудь, тут только HTML-элементы!!! */
 
 /* Убрать рамку фокуса для всех элементов */
-*:focus {
+:focus {
   @apply outline-none;
+}
+
+/* Возвращаем рамку при использовании скринриадеров */
+:focus-visible {
+  @apply ring-2 text-palette ring-offset-2;
 }
 
 .container {
