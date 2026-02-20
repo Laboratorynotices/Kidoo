@@ -1,0 +1,29 @@
+{
+  "language": "ru",
+  "menu": [
+    {
+      "id": "home",
+      "title": "Главная",
+      "url": "#home",
+      "order": 1
+    },
+    {
+      "id": "services",
+      "title": "Услуги",
+      "url": "#services",
+      "order": 2
+    },
+    {
+      "id": "portfolio",
+      "title": "Портфолио",
+      "url": "#portfolio",
+      "order": 3
+    },
+    {
+      "id": "contact",
+      "title": "Связаться с нами",
+      "url": "#contact",
+      "order": 4
+    }
+  ]
+}
