@@ -250,5 +250,5 @@
   --container-padding-2xl: 48px;
 
   --max-content-width: 1440px;
-  --z-index-floating-button: 50;
+  --z-index-floating-button: 10;
 }

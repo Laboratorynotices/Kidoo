@@ -116,7 +116,7 @@
     bg-family-bg-light dark:bg-family-bg-dark
     child:bg-child-bg-light dark:child:bg-child-bg-dark
     parent:bg-parent-bg-light dark:parent:bg-parent-bg-dark
-    z-2;
+    z-10;
 
     .hero-progress__fill {
       @apply h-[100%]
